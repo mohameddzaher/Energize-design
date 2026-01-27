@@ -58,15 +58,15 @@ export default function WhyChooseUs({ background = 'dark' }: { background?: 'whi
                 isDark ? 'bg-white/10 text-white' : 'bg-white'
               }`}
             >
-              <div className={`mb-2 ${isDark ? 'text-[#e4ba8b]' : 'text-[#e4ba8b]'}`}>
+              <div className={`mb-2 flex justify-center ${isDark ? 'text-[#e4ba8b]' : 'text-[#e4ba8b]'}`}>
                 <Icon className="w-8 h-8" />
               </div>
-              <h3 className={`font-semibold text-sm mb-1 ${
+              <h3 className={`font-semibold text-sm mb-1 text-center ${
                 isDark ? 'text-white' : 'text-[#283b4a]'
               }`}>
                 {feature.title}
               </h3>
-              <p className={`text-xs leading-relaxed flex-1 ${
+              <p className={`text-xs leading-relaxed flex-1 text-justify ${
                 isDark ? 'text-white/80' : 'text-[#283b4a]/70'
               }`}>
                 {feature.description}

@@ -91,7 +91,7 @@ export default function ServicesPreview({ background = 'white' }: { background?:
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-4 flex-1 flex flex-col">
-                  <h3 className={`text-sm lg:text-base font-bold mb-2 ${
+                  <h3 className={`text-sm lg:text-base font-bold mb-2 text-center ${
                     isDark ? 'text-white' : 'text-[#283b4a]'
                   }`}>
                     {service.title}

@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl w-full pt-12 lg:pt-12 pb-6 lg:pb-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
             >
               <Link href="/" className="inline-block mb-4">
-                <div className="relative h-14 w-48 lg:h-16 lg:w-56">
+                <div className="relative h-14 w-48 lg:h-16 lg:w-56 mx-auto md:mx-0">
                   <Image
                     src="/images/logo.png"
                     alt="Energize Design Logo"
@@ -60,10 +60,10 @@ export default function Footer() {
                   />
                 </div>
               </Link>
-              <p className="text-[#fff9f2]/70 text-xs lg:text-sm leading-relaxed mb-6 max-w-md">
+              <p className="text-[#fff9f2]/70 text-xs lg:text-sm leading-relaxed mb-6 max-w-md mx-auto md:mx-0">
                 Raising design and execution standards by merging refined craftsmanship with modern innovation to ensure trust, distinction, and long-term value.
               </p>
-              <div className="mb-4">
+              <div className="mb-4 flex justify-center md:justify-start">
                 <a
                   href="mailto:info@energize-designs.com"
                   className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors text-xs lg:text-sm flex items-center space-x-2 mb-3"
@@ -72,7 +72,7 @@ export default function Footer() {
                   <span>info@energize-designs.com</span>
                 </a>
               </div>
-              <div className="flex space-x-3">
+              <div className="flex space-x-3 justify-center md:justify-start">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className="text-center md:text-left">
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center group"
+                    className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     {link.name}
@@ -125,7 +125,7 @@ export default function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div>
+          <div className="text-center md:text-left">
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center group"
+                      className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                     >
                       <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                       {link.name}
@@ -157,7 +157,7 @@ export default function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center group"
+                      className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                     >
                       <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                       {link.name}

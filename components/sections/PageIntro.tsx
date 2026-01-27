@@ -28,7 +28,7 @@ export default function PageIntro({ title, description }: PageIntroProps) {
 
           <div className="text-center">
             <h2 className="text-lg lg:text-xl font-semibold text-[#283b4a] mb-3">{title}</h2>
-            <p className="text-xs lg:text-sm text-[#283b4a]/70 leading-relaxed text-justify">
+            <p className="text-xs lg:text-sm text-[#283b4a]/70 leading-relaxed text-center">
               {description}
             </p>
           </div>

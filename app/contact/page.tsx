@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import MapSection from '@/components/sections/MapSection';
 import PageIntro from '@/components/sections/PageIntro';
+import { FaLinkedin, FaInstagram, FaSnapchat, FaXTwitter, FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -59,7 +60,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
-            Let's discuss how we can bring your vision to life
+            Let&apos;s discuss how we can bring your vision to life
           </motion.p>
         </div>
       </section>
@@ -102,28 +103,86 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="text-sm lg:text-base font-semibold text-white mb-1">Follow Us</h3>
-                  <a
-                    href="https://linktr.ee/Energize_Design"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white/80 hover:text-[#e4ba8b] transition-colors inline-flex items-center"
-                  >
-                    Linktree
-                    <svg
-                      className="w-3 h-3 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <h3 className="text-sm lg:text-base font-semibold text-white mb-3">Follow Us</h3>
+                  <div className="space-y-3">
+                    <a
+                      href="https://linktr.ee/Energize_Design"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-white/80 hover:text-[#e4ba8b] transition-colors inline-flex items-center"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
+                      Linktree
+                      <svg
+                        className="w-3 h-3 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                    <div className="flex space-x-3 mt-3">
+                      <a
+                        href="https://www.linkedin.com/company/energize-design-and-decoration/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <FaLinkedin className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/energize_design?igsh=bXdxcXJpbWY5bTBq&utm_source=qr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <FaInstagram className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.snapchat.com/@energize_design?sender_web_id=411878c2-81b4-462f-9fb4-a85b7173a9b3&device_type=desktop&is_copy_url=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="Snapchat"
+                      >
+                        <FaSnapchat className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://x.com/energize_design"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="Twitter"
+                      >
+                        <FaXTwitter className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.tiktok.com/@energize_design?is_from_webapp=1&sender_device=pc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="TikTok"
+                      >
+                        <FaTiktok className="w-5 h-5" />
+                      </a>
+                      <a
+                        href="https://www.youtube.com/@Energize_Design"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/60 hover:text-[#e4ba8b] transition-colors"
+                        aria-label="YouTube"
+                      >
+                        <FaYoutube className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>

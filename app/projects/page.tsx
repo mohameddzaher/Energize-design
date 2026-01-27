@@ -87,7 +87,7 @@ export default function ProjectsPage() {
                 </div>
               </div>
               <div className="p-3 lg:p-4">
-                <h3 className="text-sm lg:text-base font-bold text-[#283b4a] mb-2">{project.name}</h3>
+                <h3 className="text-sm lg:text-base font-bold text-[#283b4a] mb-2 text-center">{project.name}</h3>
                 <p className="text-xs text-[#283b4a]/70 line-clamp-2">{project.description}</p>
               </div>
             </motion.div>
@@ -150,7 +150,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-base lg:text-lg font-bold text-[#283b4a] mb-2">{project.name}</h3>
+                    <h3 className="text-base lg:text-lg font-bold text-[#283b4a] mb-2 text-center">{project.name}</h3>
                     <p className="text-xs text-[#283b4a]/70 line-clamp-2">{project.description}</p>
                   </div>
                 </div>

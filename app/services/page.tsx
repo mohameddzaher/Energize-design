@@ -85,7 +85,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5">{service.title}</h3>
+                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">{service.title}</h3>
                   <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">{service.description}</p>
                   <div className="flex flex-wrap gap-1">
                     {service.features.slice(0, 3).map((feature) => (
@@ -133,7 +133,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5">{service.title}</h3>
+                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">{service.title}</h3>
                   <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">{service.description}</p>
                   <div className="flex flex-wrap gap-1">
                     {service.features.slice(0, 3).map((feature) => (

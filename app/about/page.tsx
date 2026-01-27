@@ -179,13 +179,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="relative flex justify-center"
             >
-              <div className="relative w-48 h-48 rounded-xl overflow-hidden shadow-xl">
+              <div className="relative w-48 h-48">
                 <Image
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop&q=80"
+                  src="/images/ceo.png"
                   alt="Aliaa ElSalhy - CEO"
                   fill
-                  className="object-cover"
-                  unoptimized
+                  className="object-contain rounded-full"
                 />
               </div>
             </motion.div>
@@ -212,8 +211,8 @@ export default function AboutPage() {
                 <p className="text-xs lg:text-sm text-justify">
                   Under her guidance, the company has consistently delivered projects that exceed 
                   client expectations, combining refined craftsmanship with modern innovation. 
-                  Aliaa's commitment to quality and her strategic approach to design and execution 
-                  have shaped the company's reputation for excellence.
+                  Aliaa&apos;s commitment to quality and her strategic approach to design and execution 
+                  have shaped the company&apos;s reputation for excellence.
                 </p>
               </div>
             </motion.div>
