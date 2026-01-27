@@ -59,8 +59,8 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Output configuration for static export (if needed)
-  output: 'standalone',
+  // Output configuration - remove standalone for Netlify
+  // output: 'standalone',
   
   // Experimental features for better performance
   experimental: {

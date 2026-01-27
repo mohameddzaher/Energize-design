@@ -13,10 +13,11 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Remove this redirect as it breaks Next.js routing
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
 # Headers for security and performance
 [[headers]]
