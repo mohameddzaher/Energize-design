@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  
+# Ensure public folder is copied
+[build.processing]
+  skip_processing = false
 
 [build.environment]
   NODE_VERSION = "20"
