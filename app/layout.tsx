@@ -79,9 +79,12 @@ export const metadata: Metadata = {
     canonical: 'https://energize-design.com',
   },
   icons: {
-    icon: '/images/logo.png',
+    icon: [
+      { url: '/images/logo.png', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
     shortcut: '/images/logo.png',
-    apple: '/images/logo.png',
+    apple: '/apple-icon.png',
   },
   verification: {
     // Add Google Search Console verification when available
