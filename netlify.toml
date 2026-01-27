@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  
+[build.environment]
+  NEXT_IMAGE_ALLOWED_DOMAINS = ""
+  NEXT_IMAGE_UNOPTIMIZED = "false"
 
 [build.environment]
   NODE_VERSION = "20"
