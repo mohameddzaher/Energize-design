@@ -78,6 +78,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://energize-design.com',
   },
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
   verification: {
     // Add Google Search Console verification when available
     // google: 'your-verification-code',
