@@ -35,22 +35,24 @@ export default function RoundedHeroBanner({
           <HeroBackgroundScene />
         </div>
 
-        {/* Creative gradient overlays — readable text + vignette + soft red glow - minimal to show animation */}
+        {/* Creative gradient overlays — readable text + vignette + soft red glow - dark with red like reference */}
         <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden>
-          {/* Base dark gradient - minimal */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-slate-950/40 to-black/50" />
-          {/* Main dark gradient overlay - very minimal */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/60 via-[#283b4a]/50 to-black/40" />
-          {/* Vertical gradient - minimal */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/8 to-black/35" />
-          {/* Red tint overlay - creative mix */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/10 via-transparent to-[#dc2626]/15" />
-          {/* Right side dark overlay - minimal */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/20 to-transparent" />
-          {/* Enhanced red glow */}
-          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/15 rounded-full blur-3xl" />
-          {/* Additional red accent glow */}
-          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-[#dc2626]/10 rounded-full blur-2xl" />
+          {/* Base dark gradient - dark like reference */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-slate-950/75 to-black/85" />
+          {/* Main dark gradient overlay - dark but show animation */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/80 via-[#283b4a]/70 to-black/65" />
+          {/* Vertical gradient - strong dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60" />
+          {/* Red tint overlay - creative mix - stronger */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/18 via-transparent to-[#dc2626]/22" />
+          {/* Right side dark overlay */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/40 to-transparent" />
+          {/* Enhanced red glow - larger and more visible */}
+          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/22 rounded-full blur-3xl" />
+          {/* Additional red accent glow - stronger */}
+          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-[#dc2626]/18 rounded-full blur-2xl" />
+          {/* Extra red layer for depth */}
+          <div className="absolute bottom-1/4 left-1/4 w-36 h-36 bg-[#dc2626]/15 rounded-full blur-2xl" />
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
