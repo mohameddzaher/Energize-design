@@ -62,9 +62,9 @@ export default function RoundedHeroBanner({
 
         {/* Creative gradient overlays — readable text + vignette + soft red glow */}
         <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/85 via-[#283b4a]/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#283b4a]/40 via-transparent to-[#283b4a]/20" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/15 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/90 via-[#283b4a]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#283b4a]/50 via-transparent to-[#283b4a]/30" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/20 to-transparent" />
           {/* Soft red glow, blended into background (not a hard square) */}
           <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-[#dc2626]/10 rounded-full blur-3xl" />
         </div>
@@ -72,7 +72,7 @@ export default function RoundedHeroBanner({
         {/* Content layer — pt for header overlap so hero is visible from top */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-[88px]">
           {/* Left: text block — wider on desktop */}
-          <div className="flex flex-col justify-start px-6 sm:px-10 lg:px-14 xl:px-16 pt-8 sm:pt-10 lg:pt-10 xl:pt-12 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
+          <div className="flex flex-col justify-start px-6 sm:px-10 lg:px-14 xl:px-16 pt-10 sm:pt-12 lg:pt-14 xl:pt-16 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
               25+ Projects Delivered
             </div>
