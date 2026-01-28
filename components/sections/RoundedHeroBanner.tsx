@@ -70,9 +70,9 @@ export default function RoundedHeroBanner({
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-24">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-20">
           {/* Left: text block — wider on desktop */}
-          <div className="flex flex-col justify-start lg:justify-center px-6 sm:px-10 lg:px-14 xl:px-16 pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
+          <div className="flex flex-col justify-start px-6 sm:px-10 lg:px-14 xl:px-16 pt-8 sm:pt-10 lg:pt-8 xl:pt-10 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
               25+ Projects Delivered
             </div>
