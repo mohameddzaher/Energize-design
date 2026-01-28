@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 
 const HeroBackgroundScene = dynamic(
   () => import("@/components/three/HeroBackgroundScene"),
-  { 
+  {
     ssr: false,
     loading: () => <div className="absolute inset-0 bg-[#283b4a]" />,
   },
@@ -37,7 +37,7 @@ export default function RoundedHeroBanner({
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     if (containerRef.current) {
@@ -70,9 +70,9 @@ export default function RoundedHeroBanner({
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-24 lg:pt-28">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-24">
           {/* Left: text block — wider on desktop */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 xl:px-16 py-12 sm:py-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
+          <div className="flex flex-col justify-start lg:justify-center px-6 sm:px-10 lg:px-14 xl:px-16 pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
               25+ Projects Delivered
             </div>
@@ -88,8 +88,10 @@ export default function RoundedHeroBanner({
             </h1>
             {/* Additional description text */}
             <p className="text-xs sm:text-sm lg:text-base text-white/85 leading-relaxed mb-6 sm:mb-7 max-w-[600px]">
-              We transform architectural concepts into living experiences, where every detail is intentional, 
-              every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance.
+              We transform architectural concepts into living experiences, where
+              every detail is intentional, every material tells a story, and
+              every space becomes a testament to refined craftsmanship and
+              timeless elegance.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
