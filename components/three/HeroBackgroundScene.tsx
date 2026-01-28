@@ -23,8 +23,8 @@ function FloatingParticles() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 18;
 
-      // Mix gold and red particles (50% gold, 50% red for better visibility)
-      const color = Math.random() > 0.5 ? goldColor : redColor;
+      // Mix gold and red particles (35% gold, 65% red for more red mix)
+      const color = Math.random() > 0.35 ? redColor : goldColor;
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
@@ -44,7 +44,7 @@ function FloatingParticles() {
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        size={0.7}
+        size={0.5}
         transparent
         opacity={1}
         sizeAttenuation
@@ -89,7 +89,7 @@ function RedRing() {
 
   return (
     <mesh ref={ref} position={[-4, 1.5, -1.5]}>
-      <torusGeometry args={[3, 0.1, 18, 40]} />
+      <torusGeometry args={[2.3, 0.08, 16, 36]} />
       <meshBasicMaterial
         color={BRAND_RED_LIGHT}
         transparent
@@ -111,12 +111,8 @@ function SoftSphere() {
 
   return (
     <mesh ref={ref} position={[5, -0.5, -3]}>
-      <sphereGeometry args={[2, 32, 32]} />
-      <meshBasicMaterial 
-        color={BRAND_GOLD} 
-        transparent 
-        opacity={0.45}
-      />
+      <sphereGeometry args={[1.5, 24, 24]} />
+      <meshBasicMaterial color={BRAND_GOLD} transparent opacity={0.45} />
     </mesh>
   );
 }
@@ -142,7 +138,7 @@ function FloatingCubes() {
         (Math.random() - 0.5) * 0.02,
         (Math.random() - 0.5) * 0.02,
       ] as [number, number, number],
-      color: Math.random() > 0.5 ? BRAND_GOLD : BRAND_RED_LIGHT,
+      color: Math.random() > 0.35 ? BRAND_RED_LIGHT : BRAND_GOLD,
     }));
   }, []);
 
@@ -175,7 +171,8 @@ function FloatingCube({
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.position.y = initialY + Math.sin(clock.getElapsedTime() * speed * 10) * 1.5;
+    ref.current.position.y =
+      initialY + Math.sin(clock.getElapsedTime() * speed * 10) * 1.5;
     ref.current.rotation.x += rotSpeed[0];
     ref.current.rotation.y += rotSpeed[1];
     ref.current.rotation.z += rotSpeed[2];
@@ -232,11 +229,11 @@ function ArchitecturalGrid() {
 function OrbitingSpheres() {
   const spheres = useMemo(() => {
     return Array.from({ length: 8 }, (_, i) => ({
-      radius: 0.4 + Math.random() * 0.6,
+      radius: 0.3 + Math.random() * 0.5,
       orbitRadius: 6 + Math.random() * 4,
       orbitSpeed: 0.05 + Math.random() * 0.1,
       angle: Math.random() * Math.PI * 2,
-      color: Math.random() > 0.6 ? BRAND_GOLD : BRAND_RED_LIGHT,
+      color: Math.random() > 0.3 ? BRAND_RED_LIGHT : BRAND_GOLD,
       opacity: 0.2 + Math.random() * 0.3,
     }));
   }, []);
@@ -295,7 +292,7 @@ function ArchitecturalPyramid() {
   });
 
   const geometry = useMemo(() => {
-    const shape = new THREE.ConeGeometry(1.5, 2.5, 4);
+    const shape = new THREE.ConeGeometry(1.2, 2, 4);
     return shape;
   }, []);
 
@@ -320,17 +317,17 @@ function FlowingLines() {
         new THREE.Vector3(
           (Math.random() - 0.5) * 15,
           (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 8 - 2
+          (Math.random() - 0.5) * 8 - 2,
         ),
         new THREE.Vector3(
           (Math.random() - 0.5) * 15,
           (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 8 - 2
+          (Math.random() - 0.5) * 8 - 2,
         ),
         new THREE.Vector3(
           (Math.random() - 0.5) * 15,
           (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 8 - 2
+          (Math.random() - 0.5) * 8 - 2,
         ),
       ]);
       return curve;
@@ -363,15 +360,24 @@ function FlowingLine({
   useFrame(({ clock }) => {
     if (!ref.current?.material) return;
     const material = ref.current.material as THREE.LineBasicMaterial;
-    material.opacity = 0.15 + Math.sin(clock.getElapsedTime() * 0.5 + index) * 0.1;
+    material.opacity =
+      0.15 + Math.sin(clock.getElapsedTime() * 0.5 + index) * 0.1;
   });
 
   return (
-    <primitive ref={ref} object={new THREE.Line(geometry, new THREE.LineBasicMaterial({
-      color: index % 2 === 0 ? BRAND_GOLD : BRAND_RED_LIGHT,
-      transparent: true,
-      opacity: 0.2,
-    }))} />
+    <primitive
+      ref={ref}
+      object={
+        new THREE.Line(
+          geometry,
+          new THREE.LineBasicMaterial({
+            color: index % 2 === 0 ? BRAND_GOLD : BRAND_RED_LIGHT,
+            transparent: true,
+            opacity: 0.2,
+          }),
+        )
+      }
+    />
   );
 }
 
@@ -409,8 +415,16 @@ function AmbientScene() {
     <>
       <ambientLight intensity={0.8} />
       <pointLight position={[10, 5, 5]} intensity={0.6} color={BRAND_GOLD} />
-      <pointLight position={[-6, 4, 2]} intensity={0.5} color={BRAND_RED_LIGHT} />
-      <pointLight position={[0, -5, 3]} intensity={0.4} color={BRAND_RED_LIGHT} />
+      <pointLight
+        position={[-6, 4, 2]}
+        intensity={0.5}
+        color={BRAND_RED_LIGHT}
+      />
+      <pointLight
+        position={[0, -5, 3]}
+        intensity={0.4}
+        color={BRAND_RED_LIGHT}
+      />
       <pointLight position={[0, 8, 0]} intensity={0.3} color={BRAND_GOLD} />
       <FloatingParticles />
       <FloatingRing />

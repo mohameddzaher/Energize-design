@@ -29,7 +29,7 @@ export default function RoundedHeroBanner({
   return (
     <section className="relative w-full">
       {/* Full-width hero container — 100% width, 3D as full background */}
-      <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px]">
+      <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[780px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px]">
         {/* 3D animation — full hero background */}
         <div className="absolute inset-0 z-0">
           <HeroBackgroundScene />
@@ -56,7 +56,7 @@ export default function RoundedHeroBanner({
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-[88px]">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[780px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-[88px]">
           {/* Left: text block — wider on desktop */}
           <div className="flex flex-col justify-start px-6 sm:px-10 lg:px-14 xl:px-16 pt-10 sm:pt-12 lg:pt-14 xl:pt-16 pb-12 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
