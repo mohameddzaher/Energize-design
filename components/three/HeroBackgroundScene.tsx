@@ -11,7 +11,7 @@ const BRAND_RED_LIGHT = "#ef4444"; // Lighter red
 
 function FloatingParticles() {
   const ref = useRef<THREE.Points>(null);
-  const count = 180;
+  const count = 60; // Reduced from 180 for better performance
   const geometry = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
@@ -37,15 +37,15 @@ function FloatingParticles() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.y = clock.getElapsedTime() * 0.06;
+    ref.current.rotation.y = clock.getElapsedTime() * 0.04; // Slower rotation
   });
 
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        size={0.28}
+        size={0.35}
         transparent
-        opacity={0.55}
+        opacity={0.6}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -60,13 +60,13 @@ function FloatingRing() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.x = clock.getElapsedTime() * 0.15;
-    ref.current.rotation.y = clock.getElapsedTime() * 0.2;
+    ref.current.rotation.x = clock.getElapsedTime() * 0.1; // Slower
+    ref.current.rotation.y = clock.getElapsedTime() * 0.12;
   });
 
   return (
     <mesh ref={ref} position={[4, 0, -2]}>
-      <torusGeometry args={[2.5, 0.08, 16, 48]} />
+      <torusGeometry args={[2.5, 0.08, 12, 32]} /> {/* Reduced segments */}
       <meshBasicMaterial
         color={BRAND_GOLD}
         transparent
@@ -82,40 +82,17 @@ function RedRing() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.x = clock.getElapsedTime() * -0.18;
-    ref.current.rotation.y = clock.getElapsedTime() * 0.25;
-    ref.current.rotation.z = clock.getElapsedTime() * 0.1;
+    ref.current.rotation.x = clock.getElapsedTime() * -0.12; // Slower
+    ref.current.rotation.y = clock.getElapsedTime() * 0.15;
   });
 
   return (
     <mesh ref={ref} position={[-4, 1.5, -1.5]}>
-      <torusGeometry args={[2, 0.06, 12, 36]} />
+      <torusGeometry args={[2, 0.06, 10, 24]} /> {/* Reduced segments */}
       <meshBasicMaterial
         color={BRAND_RED_LIGHT}
         transparent
         opacity={0.3}
-        side={THREE.DoubleSide}
-      />
-    </mesh>
-  );
-}
-
-function SecondRing() {
-  const ref = useRef<THREE.Mesh>(null);
-
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-    ref.current.rotation.x = clock.getElapsedTime() * -0.12;
-    ref.current.rotation.z = clock.getElapsedTime() * 0.18;
-  });
-
-  return (
-    <mesh ref={ref} position={[-3, 1, -1]}>
-      <torusGeometry args={[1.8, 0.06, 12, 36]} />
-      <meshBasicMaterial
-        color={BRAND_GOLD}
-        transparent
-        opacity={0.25}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -127,30 +104,13 @@ function SoftSphere() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.position.y = Math.sin(clock.getElapsedTime() * 0.4) * 0.5;
+    ref.current.position.y = Math.sin(clock.getElapsedTime() * 0.3) * 0.4; // Slower
   });
 
   return (
     <mesh ref={ref} position={[5, -0.5, -3]}>
-      <sphereGeometry args={[1.2, 32, 32]} />
+      <sphereGeometry args={[1.2, 24, 24]} /> {/* Reduced segments */}
       <meshBasicMaterial color={BRAND_GOLD} transparent opacity={0.12} />
-    </mesh>
-  );
-}
-
-function RedSphere() {
-  const ref = useRef<THREE.Mesh>(null);
-
-  useFrame(({ clock }) => {
-    if (!ref.current) return;
-    ref.current.position.x = Math.sin(clock.getElapsedTime() * 0.3) * 0.4;
-    ref.current.position.y = Math.cos(clock.getElapsedTime() * 0.35) * 0.3;
-  });
-
-  return (
-    <mesh ref={ref} position={[-5, 0, -2.5]}>
-      <sphereGeometry args={[0.9, 32, 32]} />
-      <meshBasicMaterial color={BRAND_RED_LIGHT} transparent opacity={0.15} />
     </mesh>
   );
 }
@@ -188,37 +148,31 @@ function AmbientScene() {
   return (
     <>
       <color attach="background" args={[BRAND_DARK]} />
-      <ambientLight intensity={0.4} />
-      <pointLight position={[10, 5, 5]} intensity={0.3} color={BRAND_GOLD} />
-      <pointLight position={[-8, -3, 3]} intensity={0.2} color={BRAND_GOLD} />
-      {/* Red accent lights */}
-      <pointLight
-        position={[-6, 4, 2]}
-        intensity={0.25}
-        color={BRAND_RED_LIGHT}
-      />
-      <pointLight position={[8, -2, -1]} intensity={0.15} color={BRAND_RED} />
+      <ambientLight intensity={0.5} /> {/* Increased ambient, reduce point lights */}
+      <pointLight position={[10, 5, 5]} intensity={0.25} color={BRAND_GOLD} />
+      <pointLight position={[-6, 4, 2]} intensity={0.2} color={BRAND_RED_LIGHT} />
       <FloatingParticles />
       <FloatingRing />
-      <SecondRing />
       <RedRing />
       <SoftSphere />
-      <RedSphere />
     </>
   );
 }
 
 export default function HeroBackgroundScene() {
   return (
-    <div className="absolute inset-0 w-full h-full">
+    <div className="absolute inset-0 w-full h-full will-change-transform">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55 }}
         gl={{
-          antialias: true,
+          antialias: false, // Disable for performance
           alpha: false,
           powerPreference: "high-performance",
+          stencil: false,
+          depth: false,
         }}
-        dpr={[1, 2]}
+        dpr={[1, 1.5]} // Reduced from [1, 2]
+        performance={{ min: 0.5 }} // Lower performance threshold
       >
         <AmbientScene />
       </Canvas>

@@ -24,26 +24,14 @@ export default function CenterQuoteSplitImages({
       <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-12">
           {/* Left Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
-          >
+          <div className="lg:col-span-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg ring-1 ring-black/5">
-              <Image src={leftImage} alt="Left" fill className="object-cover" />
+              <Image src={leftImage} alt="Left" fill className="object-cover" loading="lazy" />
             </div>
-          </motion.div>
+          </div>
 
           {/* Center Quote */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-6 text-center"
-          >
+          <div className="lg:col-span-6 text-center">
             <h2 className="mx-auto max-w-xl font-playfair text-xl sm:text-2xl lg:text-3xl leading-tight text-[#283b4a] mb-3">
               If you can <span className="italic text-[#e4ba8b]">dream</span> it, we can{' '}
               <span className="italic text-[#e4ba8b]">build</span> it.
@@ -57,20 +45,14 @@ export default function CenterQuoteSplitImages({
             >
               {ctaLabel}
             </Link>
-          </motion.div>
+          </div>
 
           {/* Right Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
-          >
+          <div className="lg:col-span-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg ring-1 ring-black/5">
-              <Image src={rightImage} alt="Right" fill className="object-cover" />
+              <Image src={rightImage} alt="Right" fill className="object-cover" loading="lazy" />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

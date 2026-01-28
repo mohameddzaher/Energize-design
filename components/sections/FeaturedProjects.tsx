@@ -16,28 +16,20 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
   return (
     <Section background={background}>
       <div className="mb-6 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <h2
           className={`text-2xl lg:text-3xl font-playfair mb-3 ${
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
         >
           Featured Projects
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+        </h2>
+        <p
           className={`text-xs lg:text-sm ${
             isDark ? 'text-white/80' : 'text-[#283b4a]/70'
           }`}
         >
           Showcasing our commitment to excellence in design and execution
-        </motion.p>
+        </p>
       </div>
 
       {/* Mobile: Horizontal Scroll */}
@@ -45,9 +37,8 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
         <div className="flex gap-4 w-max">
           {featuredProjects.map((project) => (
             <Link key={project.id} href={`/projects/${project.slug}`} className="snap-start">
-              <motion.div
-                whileHover={{ scale: 1.02, y: -3 }}
-                className={`!w-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-all duration-300 group cursor-pointer h-full ${
+              <div
+                className={`!w-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-shadow duration-200 group cursor-pointer h-full ${
                   isDark ? 'bg-white/10' : 'bg-white'
                 }`}
               >
@@ -75,7 +66,7 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
                     isDark ? 'text-white/70' : 'text-[#283b4a]/70'
                   }`}>{project.description}</p>
                 </div>
-              </motion.div>
+              </div>
             </Link>
           ))}
         </div>
@@ -85,13 +76,8 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
       <div className="hidden lg:grid grid-cols-3 gap-5 max-w-6xl mx-auto">
         {featuredProjects.map((project) => (
           <Link key={project.id} href={`/projects/${project.slug}`}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                whileHover={{ scale: 1.02, y: -3 }}
-                className={`rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-all duration-300 h-full flex flex-col ${
+              <div
+                className={`rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-shadow duration-200 h-full flex flex-col ${
                   isDark ? 'bg-white/10' : 'bg-white'
                 }`}
               >

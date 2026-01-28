@@ -32,29 +32,21 @@ export default function WhyChooseUs({ background = 'dark' }: { background?: 'whi
   
   return (
     <Section background={background}>
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+      <h2
         className={`text-2xl lg:text-3xl font-playfair text-center mb-6 ${
           isDark ? 'text-white' : 'text-[#283b4a]'
         }`}
       >
         Why Choose Us
-      </motion.h2>
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {features.map((feature, index) => {
           const Icon = feature.icon;
           return (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`rounded-xl p-5 h-full flex flex-col shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-all duration-300 ${
+              className={`rounded-xl p-5 h-full flex flex-col shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-shadow duration-200 ${
                 isDark ? 'bg-white/10 text-white' : 'bg-white'
               }`}
             >
@@ -71,7 +63,7 @@ export default function WhyChooseUs({ background = 'dark' }: { background?: 'whi
               }`}>
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           );
         })}
       </div>

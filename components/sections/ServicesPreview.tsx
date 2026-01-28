@@ -34,22 +34,14 @@ export default function ServicesPreview({ background = 'white' }: { background?:
     <Section background={background}>
       {/* Centered Text */}
       <div className="text-center mb-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <h2
           className={`text-2xl lg:text-3xl font-playfair mb-3 ${
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
         >
           Our Services
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+        </h2>
+        <p
           className={`text-xs lg:text-sm leading-relaxed text-justify ${
             isDark ? 'text-white/80' : 'text-[#283b4a]/70'
           }`}
@@ -75,9 +67,8 @@ export default function ServicesPreview({ background = 'white' }: { background?:
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <motion.div
-                whileHover={{ scale: 1.02, y: -3 }}
-                className={`rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-all duration-300 h-full flex flex-col ${
+              <div
+                className={`rounded-xl overflow-hidden shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-shadow duration-200 h-full flex flex-col ${
                   isDark ? 'bg-white/10' : 'bg-white'
                 }`}
               >
@@ -102,7 +93,7 @@ export default function ServicesPreview({ background = 'white' }: { background?:
                     {service.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
