@@ -1,22 +1,28 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import Section from '@/components/ui/Section';
-import { motion } from 'framer-motion';
-import { services } from '@/lib/services';
-import { projects } from '@/lib/projects';
-import PageIntro from '@/components/sections/PageIntro';
+import Link from "next/link";
+import Image from "next/image";
+import Section from "@/components/ui/Section";
+import { motion } from "framer-motion";
+import { services } from "@/lib/services";
+import { projects } from "@/lib/projects";
+import PageIntro from "@/components/sections/PageIntro";
 
 export default function ServicesPage() {
-  const designServices = services.filter((s) => s.category === 'Design & Creative Services');
-  const constructionServices = services.filter((s) => s.category === 'Execution & Construction Services');
-  const projectManagementServices = services.filter((s) => s.category === 'Project Management');
+  const designServices = services.filter(
+    (s) => s.category === "Design & Creative Services",
+  );
+  const constructionServices = services.filter(
+    (s) => s.category === "Execution & Construction Services",
+  );
+  const projectManagementServices = services.filter(
+    (s) => s.category === "Project Management",
+  );
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden">
+      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Studio/Studio-03.jpg"
@@ -42,7 +48,8 @@ export default function ServicesPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
-            Comprehensive design and construction solutions tailored to your needs
+            Comprehensive design and construction solutions tailored to your
+            needs
           </motion.p>
         </div>
       </section>
@@ -77,7 +84,10 @@ export default function ServicesPage() {
               >
                 <div className="aspect-video relative overflow-hidden">
                   <Image
-                    src={projects[6]?.images[index % projects[6].images.length] || '/images/projects/Studio/Studio-01.jpg'}
+                    src={
+                      projects[6]?.images[index % projects[6].images.length] ||
+                      "/images/projects/Studio/Studio-01.jpg"
+                    }
                     alt={service.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -85,11 +95,18 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">{service.title}</h3>
-                  <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">{service.description}</p>
+                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">
+                    {service.description}
+                  </p>
                   <div className="flex flex-wrap gap-1">
                     {service.features.slice(0, 3).map((feature) => (
-                      <span key={feature} className="text-[9px] px-1 py-0.5 bg-white text-[#283b4a] rounded">
+                      <span
+                        key={feature}
+                        className="text-[9px] px-1 py-0.5 bg-white text-[#283b4a] rounded"
+                      >
                         {feature}
                       </span>
                     ))}
@@ -125,7 +142,10 @@ export default function ServicesPage() {
               >
                 <div className="aspect-video relative overflow-hidden">
                   <Image
-                    src={projects[5]?.images[index % projects[5].images.length] || '/images/projects/Offices/Offices-Makkah-01.jpg'}
+                    src={
+                      projects[5]?.images[index % projects[5].images.length] ||
+                      "/images/projects/Offices/Offices-Makkah-01.jpg"
+                    }
                     alt={service.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -133,11 +153,18 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
                 <div className="p-3">
-                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">{service.title}</h3>
-                  <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">{service.description}</p>
+                  <h3 className="text-xs lg:text-sm font-bold text-[#283b4a] mb-1.5 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-[10px] text-[#283b4a]/70 mb-2 leading-relaxed line-clamp-2">
+                    {service.description}
+                  </p>
                   <div className="flex flex-wrap gap-1">
                     {service.features.slice(0, 3).map((feature) => (
-                      <span key={feature} className="text-[9px] px-1 py-0.5 bg-[#fff9f2] text-[#283b4a] rounded">
+                      <span
+                        key={feature}
+                        className="text-[9px] px-1 py-0.5 bg-[#fff9f2] text-[#283b4a] rounded"
+                      >
                         {feature}
                       </span>
                     ))}
@@ -148,7 +175,6 @@ export default function ServicesPage() {
           ))}
         </div>
       </Section>
-
     </>
   );
 }

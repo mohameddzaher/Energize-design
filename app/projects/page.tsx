@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import Section from '@/components/ui/Section';
-import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
-import { projects } from '@/lib/projects';
-import PageIntro from '@/components/sections/PageIntro';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
+import Link from "next/link";
+import Image from "next/image";
+import Section from "@/components/ui/Section";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
+import { projects } from "@/lib/projects";
+import PageIntro from "@/components/sections/PageIntro";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
 export default function ProjectsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden">
+      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Studio/Studio-04.jpg"
@@ -66,31 +66,39 @@ export default function ProjectsPage() {
                 whileHover={{ scale: 1.02, y: -3 }}
                 className="bg-[#fff9f2] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer h-full"
               >
-              <div className="aspect-video relative overflow-hidden group">
-                <Image
-                  src={
-                    project.slug === 'boys-bedroom' ? project.images[1] || project.images[0] :
-                    project.slug === 'girls-bedroom' ? project.images[1] || project.images[0] :
-                    project.slug === 'jewelry-store' ? project.images[2] || project.images[0] :
-                    project.slug === 'master-bedroom' ? project.images[1] || project.images[0] :
-                    project.images[0]
-                  }
-                  alt={project.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute top-3 right-3">
-                  <span className="px-2 py-1 bg-[#e4ba8b] text-[#283b4a] text-xs font-semibold rounded-full">
-                    {project.category}
-                  </span>
+                <div className="aspect-video relative overflow-hidden group">
+                  <Image
+                    src={
+                      project.slug === "boys-bedroom"
+                        ? project.images[1] || project.images[0]
+                        : project.slug === "girls-bedroom"
+                          ? project.images[1] || project.images[0]
+                          : project.slug === "jewelry-store"
+                            ? project.images[2] || project.images[0]
+                            : project.slug === "master-bedroom"
+                              ? project.images[1] || project.images[0]
+                              : project.images[0]
+                    }
+                    alt={project.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <span className="px-2 py-1 bg-[#e4ba8b] text-[#283b4a] text-xs font-semibold rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-3 lg:p-4">
-                <h3 className="text-sm lg:text-base font-bold text-[#283b4a] mb-2 text-center">{project.name}</h3>
-                <p className="text-xs text-[#283b4a]/70 line-clamp-2">{project.description}</p>
-              </div>
-            </motion.div>
+                <div className="p-3 lg:p-4">
+                  <h3 className="text-sm lg:text-base font-bold text-[#283b4a] mb-2 text-center">
+                    {project.name}
+                  </h3>
+                  <p className="text-xs text-[#283b4a]/70 line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
+              </motion.div>
             </Link>
           ))}
         </div>
@@ -132,11 +140,15 @@ export default function ProjectsPage() {
                   <div className="aspect-video relative overflow-hidden">
                     <Image
                       src={
-                        project.slug === 'boys-bedroom' ? project.images[1] || project.images[0] :
-                        project.slug === 'girls-bedroom' ? project.images[1] || project.images[0] :
-                        project.slug === 'jewelry-store' ? project.images[2] || project.images[0] :
-                        project.slug === 'master-bedroom' ? project.images[1] || project.images[0] :
-                        project.images[0]
+                        project.slug === "boys-bedroom"
+                          ? project.images[1] || project.images[0]
+                          : project.slug === "girls-bedroom"
+                            ? project.images[1] || project.images[0]
+                            : project.slug === "jewelry-store"
+                              ? project.images[2] || project.images[0]
+                              : project.slug === "master-bedroom"
+                                ? project.images[1] || project.images[0]
+                                : project.images[0]
                       }
                       alt={project.name}
                       fill
@@ -150,8 +162,12 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-base lg:text-lg font-bold text-[#283b4a] mb-2 text-center">{project.name}</h3>
-                    <p className="text-xs text-[#283b4a]/70 line-clamp-2">{project.description}</p>
+                    <h3 className="text-base lg:text-lg font-bold text-[#283b4a] mb-2 text-center">
+                      {project.name}
+                    </h3>
+                    <p className="text-xs text-[#283b4a]/70 line-clamp-2">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
               </Link>

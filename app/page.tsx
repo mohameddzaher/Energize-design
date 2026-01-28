@@ -1,22 +1,24 @@
-import { Metadata } from 'next';
-import RoundedHeroBanner from '@/components/sections/RoundedHeroBanner';
-import CenterQuoteSplitImages from '@/components/sections/CenterQuoteSplitImages';
-import CollageShowcase from '@/components/sections/CollageShowcase';
-import ServicesPreview from '@/components/sections/ServicesPreview';
-import FeaturedProjects from '@/components/sections/FeaturedProjects';
-import WhyChooseUs from '@/components/sections/WhyChooseUs';
-import Gallery from '@/components/sections/Gallery';
-import Newsletter from '@/components/sections/Newsletter';
-import ContactCTA from '@/components/sections/ContactCTA';
-import MapSection from '@/components/sections/MapSection';
+import { Metadata } from "next";
+import RoundedHeroBanner from "@/components/sections/RoundedHeroBanner";
+import CenterQuoteSplitImages from "@/components/sections/CenterQuoteSplitImages";
+import CollageShowcase from "@/components/sections/CollageShowcase";
+import ServicesPreview from "@/components/sections/ServicesPreview";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import Gallery from "@/components/sections/Gallery";
+import Newsletter from "@/components/sections/Newsletter";
+import ContactCTA from "@/components/sections/ContactCTA";
+import MapSection from "@/components/sections/MapSection";
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Energize Design - Premium interior design and construction services in Jeddah, Saudi Arabia. Raising design and execution standards with refined craftsmanship and modern innovation.',
+  title: "Home",
+  description:
+    "Energize Design - Premium interior design and construction services in Jeddah, Saudi Arabia. Raising design and execution standards with refined craftsmanship and modern innovation.",
   openGraph: {
-    title: 'Energize Design | Premium Interior Design & Construction',
-    description: 'Raising design and execution standards by merging refined craftsmanship with modern innovation.',
-    images: ['/images/projects/Studio/Studio-01.jpg'],
+    title: "Energize Design | Premium Interior Design & Construction",
+    description:
+      "Raising design and execution standards by merging refined craftsmanship with modern innovation.",
+    images: ["/images/projects/Studio/Studio-01.jpg"],
   },
 };
 
@@ -29,7 +31,6 @@ export default function Home() {
         titleLine1="Set New Standards"
         titleLine2="in Modern Design"
         titleLine3="& Construction"
-        imageSrc="/images/projects/Studio/Studio-01.jpg"
       />
 
       {/* Center Quote with Split Images */}
@@ -46,16 +47,16 @@ export default function Home() {
       <CollageShowcase
         heading="Comprehensive Design & Construction Solutions"
         bullets={[
-          'Architectural & Interior Design',
-          'General Contracting & Construction',
-          'Project Management & Supervision',
+          "Architectural & Interior Design",
+          "General Contracting & Construction",
+          "Project Management & Supervision",
         ]}
         ctaLabel="Explore Services"
         ctaHref="/services"
         images={[
-          '/images/projects/Offices/Offices-Makkah-01.jpg',
-          '/images/projects/Master Bedroom/Bedroom-02.jpg',
-          '/images/projects/Boys Bedroom/BBR-01.jpg',
+          "/images/projects/Offices/Offices-Makkah-01.jpg",
+          "/images/projects/Master Bedroom/Bedroom-02.jpg",
+          "/images/projects/Boys Bedroom/BBR-01.jpg",
         ]}
       />
 

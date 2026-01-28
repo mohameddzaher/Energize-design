@@ -1,20 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Section from '@/components/ui/Section';
-import { motion } from 'framer-motion';
-import Button from '@/components/ui/Button';
-import MapSection from '@/components/sections/MapSection';
-import PageIntro from '@/components/sections/PageIntro';
-import { FaLinkedin, FaInstagram, FaSnapchat, FaXTwitter, FaTiktok, FaYoutube } from 'react-icons/fa6';
+import { useState } from "react";
+import Image from "next/image";
+import Section from "@/components/ui/Section";
+import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
+import MapSection from "@/components/sections/MapSection";
+import PageIntro from "@/components/sections/PageIntro";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaSnapchat,
+  FaXTwitter,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa6";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -23,18 +30,20 @@ export default function ContactPage() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: "", email: "", phone: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden">
+      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Offices/Offices-Makkah-03.jpg"
@@ -82,10 +91,14 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">Contact Information</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
+                Contact Information
+              </h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-sm lg:text-base font-semibold text-white mb-1">Email</h3>
+                  <h3 className="text-sm lg:text-base font-semibold text-white mb-1">
+                    Email
+                  </h3>
                   <a
                     href="mailto:info@energize-designs.com"
                     className="text-sm text-white/80 hover:text-[#e4ba8b] transition-colors"
@@ -94,7 +107,9 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="text-sm lg:text-base font-semibold text-white mb-1">Phone</h3>
+                  <h3 className="text-sm lg:text-base font-semibold text-white mb-1">
+                    Phone
+                  </h3>
                   <a
                     href="tel:+1234567890"
                     className="text-sm text-white/80 hover:text-[#e4ba8b] transition-colors"
@@ -103,7 +118,9 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="text-sm lg:text-base font-semibold text-white mb-3">Follow Us</h3>
+                  <h3 className="text-sm lg:text-base font-semibold text-white mb-3">
+                    Follow Us
+                  </h3>
                   <div className="space-y-3">
                     <a
                       href="https://linktr.ee/Energize_Design"
@@ -197,7 +214,10 @@ export default function ContactPage() {
               className="space-y-4"
             >
               <div>
-                <label htmlFor="name" className="block text-xs font-medium text-white mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-xs font-medium text-white mb-1"
+                >
                   Name
                 </label>
                 <input
@@ -212,7 +232,10 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs font-medium text-white mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-medium text-white mb-1"
+                >
                   Email
                 </label>
                 <input
@@ -227,7 +250,10 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-xs font-medium text-white mb-1">
+                <label
+                  htmlFor="phone"
+                  className="block text-xs font-medium text-white mb-1"
+                >
                   Phone
                 </label>
                 <input
@@ -241,7 +267,10 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-xs font-medium text-white mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-xs font-medium text-white mb-1"
+                >
                   Message
                 </label>
                 <textarea
@@ -261,7 +290,7 @@ export default function ContactPage() {
                 size="md"
                 className="w-full"
               >
-                {submitted ? 'Message Sent!' : 'Send Message'}
+                {submitted ? "Message Sent!" : "Send Message"}
               </Button>
             </motion.form>
           </div>

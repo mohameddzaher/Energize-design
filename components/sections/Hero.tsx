@@ -11,7 +11,7 @@ const HeroScene = dynamic(() => import('../three/HeroScene'), {
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center max-w-full pt-20">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center max-w-full ">
       {/* Three.js Background */}
       <div className="absolute inset-0 z-0 w-full">
         <HeroScene />

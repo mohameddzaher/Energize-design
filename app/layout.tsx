@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import HeaderPill from "@/components/ui/HeaderPill";
 import Footer from "@/components/ui/Footer";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -17,12 +18,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://energize-design.com'),
+  metadataBase: new URL("https://energize-design.com"),
   title: {
     default: "Energize Design | Premium Interior Design & Construction",
-    template: "%s | Energize Design"
+    template: "%s | Energize Design",
   },
-  description: "Raising design and execution standards by merging refined craftsmanship with modern innovation. Premium interior design and construction services in Jeddah, Saudi Arabia.",
+  description:
+    "Raising design and execution standards by merging refined craftsmanship with modern innovation. Premium interior design and construction services in Jeddah, Saudi Arabia.",
   keywords: [
     "interior design",
     "construction",
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     "project management",
     "luxury interior design",
     "commercial design",
-    "residential design"
+    "residential design",
   ],
   authors: [{ name: "Energize Design" }],
   creator: "Energize Design",
@@ -48,43 +50,45 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://energize-design.com',
-    siteName: 'Energize Design',
-    title: 'Energize Design | Premium Interior Design & Construction',
-    description: 'Raising design and execution standards by merging refined craftsmanship with modern innovation. Premium interior design and construction services.',
+    type: "website",
+    locale: "en_US",
+    url: "https://energize-design.com",
+    siteName: "Energize Design",
+    title: "Energize Design | Premium Interior Design & Construction",
+    description:
+      "Raising design and execution standards by merging refined craftsmanship with modern innovation. Premium interior design and construction services.",
     images: [
       {
-        url: '/images/logo.png',
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
-        alt: 'Energize Design Logo',
+        alt: "Energize Design Logo",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Energize Design | Premium Interior Design & Construction',
-    description: 'Raising design and execution standards by merging refined craftsmanship with modern innovation.',
-    images: ['/images/logo.png'],
+    card: "summary_large_image",
+    title: "Energize Design | Premium Interior Design & Construction",
+    description:
+      "Raising design and execution standards by merging refined craftsmanship with modern innovation.",
+    images: ["/images/logo.png"],
   },
   alternates: {
-    canonical: 'https://energize-design.com',
+    canonical: "https://energize-design.com",
   },
   icons: {
     icon: [
-      { url: '/images/logo.png', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: "/images/logo.png", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
     ],
-    shortcut: '/images/logo.png',
-    apple: '/apple-icon.png',
+    shortcut: "/images/logo.png",
+    apple: "/apple-icon.png",
   },
   verification: {
     // Add Google Search Console verification when available
@@ -99,14 +103,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${playfair.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <HeaderPill />
-        <main className="pt-20 lg:pt-24 w-full overflow-x-hidden">
-          {children}
-        </main>
+        <main className="pt-0 w-full overflow-x-hidden">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

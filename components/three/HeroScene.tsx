@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import * as THREE from 'three';
+import { useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import * as THREE from "three";
 
 function FloatingParticles() {
   const particlesRef = useRef<THREE.Points>(null);
@@ -33,7 +33,8 @@ function FloatingParticles() {
   useFrame(({ clock }) => {
     if (particlesRef.current) {
       particlesRef.current.rotation.y = clock.getElapsedTime() * 0.1;
-      const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
+      const positions = particlesRef.current.geometry.attributes.position
+        .array as Float32Array;
       for (let i = 1; i < positions.length; i += 3) {
         positions[i] += Math.sin(clock.getElapsedTime() + i) * 0.001;
       }
@@ -43,8 +44,8 @@ function FloatingParticles() {
 
   const geometry = useMemo(() => {
     const geom = new THREE.BufferGeometry();
-    geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geom.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    geom.setAttribute("color", new THREE.BufferAttribute(colors, 3));
     return geom;
   }, [positions, colors]);
 
@@ -63,7 +64,8 @@ function GeometricShapes() {
       groupRef.current.rotation.y = clock.getElapsedTime() * 0.05;
       groupRef.current.children.forEach((child, index) => {
         if (child instanceof THREE.Mesh) {
-          child.position.y = Math.sin(clock.getElapsedTime() * 0.5 + index) * 0.3;
+          child.position.y =
+            Math.sin(clock.getElapsedTime() * 0.5 + index) * 0.3;
         }
       });
     }
@@ -83,13 +85,13 @@ function GeometricShapes() {
     <group ref={groupRef}>
       {shapes.map((shape, index) => (
         <mesh key={index} position={[shape.x, 0, shape.z]}>
-          <boxGeometry args={[1, 2, 1]} />
+          <sphereGeometry args={[1.1, 32, 32]} />
           <meshStandardMaterial
-            color={index % 2 === 0 ? '#283b4a' : '#e4ba8b'}
-            metalness={0.8}
-            roughness={0.2}
+            color={index % 2 === 0 ? "#283b4a" : "#e4ba8b"}
+            metalness={0.4}
+            roughness={0.3}
             transparent
-            opacity={0.4}
+            opacity={0.45}
           />
         </mesh>
       ))}
@@ -101,8 +103,16 @@ function LightBeams() {
   return (
     <>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={0.6} color="#e4ba8b" />
-      <directionalLight position={[-10, 10, -5]} intensity={0.6} color="#283b4a" />
+      <directionalLight
+        position={[10, 10, 5]}
+        intensity={0.6}
+        color="#e4ba8b"
+      />
+      <directionalLight
+        position={[-10, 10, -5]}
+        intensity={0.6}
+        color="#283b4a"
+      />
       <pointLight position={[0, 5, 0]} intensity={0.4} color="#fff9f2" />
     </>
   );

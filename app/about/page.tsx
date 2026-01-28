@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Section from '@/components/ui/Section';
-import { motion } from 'framer-motion';
-import PageIntro from '@/components/sections/PageIntro';
+import Image from "next/image";
+import Section from "@/components/ui/Section";
+import { motion } from "framer-motion";
+import PageIntro from "@/components/sections/PageIntro";
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden">
+      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Studio/Studio-02.jpg"
@@ -46,7 +46,6 @@ export default function AboutPage() {
         description="We transform architectural concepts into living experiences, where every detail is intentional, every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance."
       />
 
-
       {/* Who We Are Section */}
       <Section background="dark">
         <div className="max-w-6xl mx-auto">
@@ -69,7 +68,15 @@ export default function AboutPage() {
                 className="order-2 lg:order-1"
               >
                 <p className="text-sm lg:text-base text-white/80 leading-relaxed text-justify">
-                  Energize Design is a luxury architecture and decoration studio that redefines spaces with power and elegance. Rooted in visionary design principles, Energize fuses the precision of modern construction with the sophistication of timeless aesthetics. We believe true design goes beyond aesthetics — it tells a story, creates emotional impact, and delivers measurable results. Through passion for detail and continuous innovation, we transform ideas into real-world experiences that make a difference.
+                  Energize Design is a luxury architecture and decoration studio
+                  that redefines spaces with power and elegance. Rooted in
+                  visionary design principles, Energize fuses the precision of
+                  modern construction with the sophistication of timeless
+                  aesthetics. We believe true design goes beyond aesthetics — it
+                  tells a story, creates emotional impact, and delivers
+                  measurable results. Through passion for detail and continuous
+                  innovation, we transform ideas into real-world experiences
+                  that make a difference.
                 </p>
               </motion.div>
               <motion.div
@@ -115,10 +122,13 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">Our Vision</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">
+                Our Vision
+              </h2>
               <p className="text-sm lg:text-base text-[#283b4a]/80 leading-relaxed text-justify">
-                Raising design and execution standards by merging refined craftsmanship with modern innovation 
-                to ensure trust, distinction, and long-term value in every project.
+                Raising design and execution standards by merging refined
+                craftsmanship with modern innovation to ensure trust,
+                distinction, and long-term value in every project.
               </p>
             </motion.div>
           </div>
@@ -135,10 +145,13 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-xl lg:text-2xl font-bold text-[#e4ba8b] mb-4">Our Mission</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#e4ba8b] mb-4">
+                Our Mission
+              </h2>
               <p className="text-sm lg:text-base text-white/80 leading-relaxed text-justify">
-                To become leaders in delivering refined, timeless interior designs that redefine quality 
-                and creativity across the industry.
+                To become leaders in delivering refined, timeless interior
+                designs that redefine quality and creativity across the
+                industry.
               </p>
             </motion.div>
             <motion.div
@@ -196,22 +209,26 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-4">
-                <span className="text-xs lg:text-sm text-[#e4ba8b] font-semibold">Chief Executive Officer</span>
+                <span className="text-xs lg:text-sm text-[#e4ba8b] font-semibold">
+                  Chief Executive Officer
+                </span>
                 <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mt-2">
                   Aliaa ElSalhy
                 </h2>
               </div>
               <div className="space-y-3 text-[#283b4a]/80 leading-relaxed">
                 <p className="text-xs lg:text-sm text-justify">
-                  As the CEO of Energize Design, Aliaa ElSalhy brings visionary leadership and 
-                  extensive expertise in interior design and construction management. With a passion 
-                  for excellence and innovation, Aliaa has been instrumental in establishing Energize 
-                  Design as a leader in the industry.
+                  As the CEO of Energize Design, Aliaa ElSalhy brings visionary
+                  leadership and extensive expertise in interior design and
+                  construction management. With a passion for excellence and
+                  innovation, Aliaa has been instrumental in establishing
+                  Energize Design as a leader in the industry.
                 </p>
                 <p className="text-xs lg:text-sm text-justify">
-                  Under her guidance, the company has consistently delivered projects that exceed 
-                  client expectations, combining refined craftsmanship with modern innovation. 
-                  Aliaa&apos;s commitment to quality and her strategic approach to design and execution 
+                  Under her guidance, the company has consistently delivered
+                  projects that exceed client expectations, combining refined
+                  craftsmanship with modern innovation. Aliaa&apos;s commitment
+                  to quality and her strategic approach to design and execution
                   have shaped the company&apos;s reputation for excellence.
                 </p>
               </div>
