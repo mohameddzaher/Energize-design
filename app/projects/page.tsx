@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
 import { projects } from "@/lib/projects";
 import PageIntro from "@/components/sections/PageIntro";
+import { getGoogleDriveUrl } from "@/lib/googleDrive";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
@@ -19,7 +20,7 @@ export default function ProjectsPage() {
       <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
-            src="/images/projects/Studio/Studio-04.jpg"
+            src={getGoogleDriveUrl("/images/projects/Studio/Studio-04.jpg", false)}
             alt="Projects Background"
             fill
             className="object-cover"

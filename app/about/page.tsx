@@ -4,6 +4,7 @@ import Image from "next/image";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import PageIntro from "@/components/sections/PageIntro";
+import { getGoogleDriveUrl } from "@/lib/googleDrive";
 
 export default function AboutPage() {
   return (
@@ -12,7 +13,7 @@ export default function AboutPage() {
       <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
-            src="/images/projects/Studio/Studio-02.jpg"
+            src={getGoogleDriveUrl("/images/projects/Studio/Studio-02.jpg", false)}
             alt="About Background"
             fill
             className="object-cover"
@@ -87,7 +88,7 @@ export default function AboutPage() {
                 className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-xl order-1 lg:order-2"
               >
                 <Image
-                  src="/images/projects/Studio/Studio-01.jpg"
+                  src={getGoogleDriveUrl("/images/projects/Studio/Studio-01.jpg", false)}
                   alt="Energize Design"
                   fill
                   className="object-cover"
@@ -110,7 +111,7 @@ export default function AboutPage() {
               className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
             >
               <Image
-                src="/images/projects/LANO Cafe/LANO CAFE-02.jpg"
+                src={getGoogleDriveUrl("/images/projects/LANO Cafe/LANO CAFE-02.jpg", false)}
                 alt="Our Vision"
                 fill
                 className="object-cover"
@@ -162,7 +163,7 @@ export default function AboutPage() {
               className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
             >
               <Image
-                src="/images/projects/Offices/Offices-Makkah-02.jpg"
+                src={getGoogleDriveUrl("/images/projects/Offices/Offices-Makkah-02.jpg", false)}
                 alt="Our Mission"
                 fill
                 className="object-cover"

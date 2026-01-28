@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import PageIntro from "@/components/sections/PageIntro";
+import { getGoogleDriveUrl } from "@/lib/googleDrive";
 
 export default function ServicesPage() {
   const designServices = services.filter(
@@ -25,7 +26,7 @@ export default function ServicesPage() {
       <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
-            src="/images/projects/Studio/Studio-03.jpg"
+            src={getGoogleDriveUrl("/images/projects/Studio/Studio-03.jpg", false)}
             alt="Services Background"
             fill
             className="object-cover"
@@ -86,7 +87,7 @@ export default function ServicesPage() {
                   <Image
                     src={
                       projects[6]?.images[index % projects[6].images.length] ||
-                      "/images/projects/Studio/Studio-01.jpg"
+                      getGoogleDriveUrl("/images/projects/Studio/Studio-01.jpg", false)
                     }
                     alt={service.title}
                     fill
@@ -144,7 +145,7 @@ export default function ServicesPage() {
                   <Image
                     src={
                       projects[5]?.images[index % projects[5].images.length] ||
-                      "/images/projects/Offices/Offices-Makkah-01.jpg"
+                      getGoogleDriveUrl("/images/projects/Offices/Offices-Makkah-01.jpg", false)
                     }
                     alt={service.title}
                     fill

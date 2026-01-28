@@ -1,3 +1,5 @@
+import { getGoogleDriveUrl } from './googleDrive';
+
 export interface Project {
   id: string;
   name: string;
@@ -6,6 +8,15 @@ export interface Project {
   description: string;
   images: string[];
   video?: string;
+}
+
+// Helper function to convert local paths to Google Drive URLs
+function getImageUrl(localPath: string): string {
+  return getGoogleDriveUrl(localPath, false);
+}
+
+function getVideoUrl(localPath: string): string {
+  return getGoogleDriveUrl(localPath, true);
 }
 
 export const projects: Project[] = [
@@ -17,14 +28,14 @@ export const projects: Project[] = [
     description:
       "A professionally designed boys' bedroom that balances elegance and functionality, with smart space planning and warm details for a calm living experience.",
     images: [
-      "/images/projects/Boys Bedroom/BBR-03.jpg",
-      "/images/projects/Boys Bedroom/BBR-01.jpg",
-      "/images/projects/Boys Bedroom/BBR-02.jpg",
-      "/images/projects/Boys Bedroom/BBR-04.jpg",
-      "/images/projects/Boys Bedroom/BBR-05.jpg",
-      "/images/projects/Boys Bedroom/BBR-06.jpg",
+      getImageUrl("/images/projects/Boys Bedroom/BBR-03.jpg"),
+      getImageUrl("/images/projects/Boys Bedroom/BBR-01.jpg"),
+      getImageUrl("/images/projects/Boys Bedroom/BBR-02.jpg"),
+      getImageUrl("/images/projects/Boys Bedroom/BBR-04.jpg"),
+      getImageUrl("/images/projects/Boys Bedroom/BBR-05.jpg"),
+      getImageUrl("/images/projects/Boys Bedroom/BBR-06.jpg"),
     ],
-    video: "/images/projects/Boys Bedroom/BoysBedroom Video.mp4",
+    video: getVideoUrl("/images/projects/Boys Bedroom/BoysBedroom Video.mp4"),
   },
   {
     id: "2",
@@ -34,12 +45,12 @@ export const projects: Project[] = [
     description:
       "A modern and elegant girls' bedroom design that combines comfort, functionality, and style.",
     images: [
-      "/images/projects/Girls Bedroom/Girls Bedroom-01.jpg",
-      "/images/projects/Girls Bedroom/Girls Bedroom-02.jpg",
-      "/images/projects/Girls Bedroom/Girls Bedroom-03.jpg",
-      "/images/projects/Girls Bedroom/Girls Bedroom-04.jpg",
+      getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-01.jpg"),
+      getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-02.jpg"),
+      getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-03.jpg"),
+      getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-04.jpg"),
     ],
-    video: "/images/projects/Girls Bedroom/GBR.mp4",
+    video: getVideoUrl("/images/projects/Girls Bedroom/GBR.mp4"),
   },
   {
     id: "3",
@@ -70,16 +81,16 @@ export const projects: Project[] = [
     description:
       "A modern cafe design that creates a welcoming atmosphere for customers.",
     images: [
-      "/images/projects/LANO Cafe/LANO CAFE-09.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-02.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-04.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-05.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-06.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-07.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-08.jpg",
-      "/images/projects/LANO Cafe/LANO CAFE-09.jpg",
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-09.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-02.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-04.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-05.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-06.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-07.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-08.jpg"),
+      getImageUrl("/images/projects/LANO Cafe/LANO CAFE-09.jpg"),
     ],
-    video: "/images/projects/LANO Cafe/Lano Cafe .mp4",
+    video: getVideoUrl("/images/projects/LANO Cafe/Lano Cafe .mp4"),
   },
   {
     id: "5",
@@ -89,14 +100,14 @@ export const projects: Project[] = [
     description:
       "A luxurious master bedroom design that combines elegance and comfort.",
     images: [
-      "/images/projects/Master Bedroom/Bedroom-01.jpg",
-      "/images/projects/Master Bedroom/Bedroom-02.jpg",
-      "/images/projects/Master Bedroom/Bedroom-03.jpg",
-      "/images/projects/Master Bedroom/Bedroom-04.jpg",
-      "/images/projects/Master Bedroom/Bedroom-05.jpg",
-      "/images/projects/Master Bedroom/Bedroom-06.jpg",
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-01.jpg"),
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-02.jpg"),
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-03.jpg"),
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-04.jpg"),
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-05.jpg"),
+      getImageUrl("/images/projects/Master Bedroom/Bedroom-06.jpg"),
     ],
-    video: "/images/projects/Master Bedroom/Master Bedroom.mp4",
+    video: getVideoUrl("/images/projects/Master Bedroom/Master Bedroom.mp4"),
   },
   {
     id: "6",
@@ -106,16 +117,16 @@ export const projects: Project[] = [
     description:
       "Professional office space design in Makkah that enhances productivity and creates a modern work environment.",
     images: [
-      "/images/projects/Offices/Offices-Makkah-01.jpg",
-      "/images/projects/Offices/Offices-Makkah-02.jpg",
-      "/images/projects/Offices/Offices-Makkah-03.jpg",
-      "/images/projects/Offices/Offices-Makkah-04.jpg",
-      "/images/projects/Offices/Offices-Makkah-05.jpg",
-      "/images/projects/Offices/Offices-Makkah-06.jpg",
-      "/images/projects/Offices/Offices-Makkah-07.jpg",
-      "/images/projects/Offices/Offices-Makkah-08.jpg",
+      getImageUrl("/images/projects/Offices/Offices-Makkah-01.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-02.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-03.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-04.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-05.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-06.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-07.jpg"),
+      getImageUrl("/images/projects/Offices/Offices-Makkah-08.jpg"),
     ],
-    video: "/images/projects/Offices/Offices Video.mp4",
+    video: getVideoUrl("/images/projects/Offices/Offices Video.mp4"),
   },
   {
     id: "7",
@@ -125,19 +136,19 @@ export const projects: Project[] = [
     description:
       "A modern studio design that balances elegance and functionality, with smart space planning and warm details for a calm living experience.",
     images: [
-      "/images/projects/Studio/Studio-01.jpg",
-      "/images/projects/Studio/Studio-02.jpg",
-      "/images/projects/Studio/Studio-03.jpg",
-      "/images/projects/Studio/Studio-04.jpg",
-      "/images/projects/Studio/Studio-05.jpg",
-      "/images/projects/Studio/Studio-06.jpg",
-      "/images/projects/Studio/Studio-07.jpg",
-      "/images/projects/Studio/Studio-08.jpg",
-      "/images/projects/Studio/Studio-09.jpg",
-      "/images/projects/Studio/Studio-10.jpg",
-      "/images/projects/Studio/Studio-11.jpg",
+      getImageUrl("/images/projects/Studio/Studio-01.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-02.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-03.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-04.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-05.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-06.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-07.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-08.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-09.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-10.jpg"),
+      getImageUrl("/images/projects/Studio/Studio-11.jpg"),
     ],
-    video: "/images/projects/Studio/STUDIO.mov",
+    video: getVideoUrl("/images/projects/Studio/STUDIO.mov"),
   },
 ];
 
