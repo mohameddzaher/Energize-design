@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
@@ -48,7 +47,7 @@ export default function ServicesPreview({ background = 'white' }: { background?:
         >
           From initial concept to final execution, we deliver comprehensive design and construction solutions 
           that exceed expectations and create lasting value.
-        </motion.p>
+        </p>
       </div>
 
       {/* Horizontal Slider Cards */}

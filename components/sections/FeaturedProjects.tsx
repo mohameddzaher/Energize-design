@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
@@ -105,7 +104,7 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
                   isDark ? 'text-white/70' : 'text-[#283b4a]/70'
                 }`}>{project.description}</p>
               </div>
-            </motion.div>
+            </div>
           </Link>
         ))}
       </div>
