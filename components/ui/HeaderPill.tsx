@@ -34,8 +34,8 @@ export default function HeaderPill({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
-        <div className="bg-[#fff9f2]/95 backdrop-blur-sm shadow-sm rounded-full px-3 sm:px-5 lg:px-8 py-2.5 lg:py-3.5">
+      <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-8 py-2 lg:py-2.5">
+        <div className="bg-[#fff9f2]/95 backdrop-blur-sm shadow-sm rounded-full px-2 sm:px-4 lg:px-6 py-1.5 lg:py-2">
           <div className="flex items-center justify-between gap-3 lg:gap-4 relative">
             {/* Logo - Left */}
             <Link href="/" className="flex items-center flex-shrink-0">
