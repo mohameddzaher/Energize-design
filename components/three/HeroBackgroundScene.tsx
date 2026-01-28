@@ -11,7 +11,7 @@ const BRAND_RED_LIGHT = "#ef4444"; // Lighter red
 
 function FloatingParticles() {
   const ref = useRef<THREE.Points>(null);
-  const count = 60; // Reduced from 180 for better performance
+  const count = 80; // Increased for better visibility
   const geometry = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
@@ -19,12 +19,12 @@ function FloatingParticles() {
     const redColor = new THREE.Color(BRAND_RED_LIGHT);
 
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 24;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 14;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+      positions[i * 3] = (Math.random() - 0.5) * 30;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 18;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
 
-      // Mix gold and red particles (70% gold, 30% red)
-      const color = Math.random() > 0.3 ? goldColor : redColor;
+      // Mix gold and red particles (60% gold, 40% red for more red visibility)
+      const color = Math.random() > 0.4 ? goldColor : redColor;
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
@@ -37,15 +37,15 @@ function FloatingParticles() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.y = clock.getElapsedTime() * 0.04; // Slower rotation
+    ref.current.rotation.y = clock.getElapsedTime() * 0.05;
   });
 
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        size={0.35}
+        size={0.5}
         transparent
-        opacity={0.6}
+        opacity={0.85}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -60,17 +60,17 @@ function FloatingRing() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.x = clock.getElapsedTime() * 0.1; // Slower
-    ref.current.rotation.y = clock.getElapsedTime() * 0.12;
+    ref.current.rotation.x = clock.getElapsedTime() * 0.12;
+    ref.current.rotation.y = clock.getElapsedTime() * 0.15;
   });
 
   return (
     <mesh ref={ref} position={[4, 0, -2]}>
-      <torusGeometry args={[2.5, 0.08, 12, 32]} /> {/* Reduced segments */}
+      <torusGeometry args={[3, 0.1, 16, 40]} />
       <meshBasicMaterial
         color={BRAND_GOLD}
         transparent
-        opacity={0.35}
+        opacity={0.5}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -82,17 +82,17 @@ function RedRing() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.x = clock.getElapsedTime() * -0.12; // Slower
-    ref.current.rotation.y = clock.getElapsedTime() * 0.15;
+    ref.current.rotation.x = clock.getElapsedTime() * -0.15;
+    ref.current.rotation.y = clock.getElapsedTime() * 0.18;
   });
 
   return (
     <mesh ref={ref} position={[-4, 1.5, -1.5]}>
-      <torusGeometry args={[2, 0.06, 10, 24]} /> {/* Reduced segments */}
+      <torusGeometry args={[2.5, 0.08, 14, 32]} />
       <meshBasicMaterial
         color={BRAND_RED_LIGHT}
         transparent
-        opacity={0.3}
+        opacity={0.45}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -148,9 +148,10 @@ function AmbientScene() {
   return (
     <>
       <color attach="background" args={[BRAND_DARK]} />
-      <ambientLight intensity={0.5} /> {/* Increased ambient, reduce point lights */}
-      <pointLight position={[10, 5, 5]} intensity={0.25} color={BRAND_GOLD} />
-      <pointLight position={[-6, 4, 2]} intensity={0.2} color={BRAND_RED_LIGHT} />
+      <ambientLight intensity={0.6} />
+      <pointLight position={[10, 5, 5]} intensity={0.4} color={BRAND_GOLD} />
+      <pointLight position={[-6, 4, 2]} intensity={0.35} color={BRAND_RED_LIGHT} />
+      <pointLight position={[0, -5, 3]} intensity={0.25} color={BRAND_RED_LIGHT} />
       <FloatingParticles />
       <FloatingRing />
       <RedRing />

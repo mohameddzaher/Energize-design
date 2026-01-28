@@ -64,14 +64,14 @@ export default function RoundedHeroBanner({
         <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden>
           {/* Base dark gradient - very dark like reference */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-black" />
-          {/* Main dark gradient overlay - maximum darkness */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/99 via-[#283b4a]/90 to-black/80" />
+          {/* Main dark gradient overlay - slightly reduced to show animation */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/96 via-[#283b4a]/85 to-black/75" />
           {/* Vertical gradient - strong dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/65" />
           {/* Red tint overlay - creative mix - stronger */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/20 via-transparent to-[#dc2626]/25" />
-          {/* Right side dark overlay - very dark */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/50 to-transparent" />
+          {/* Right side dark overlay - slightly reduced */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/45 to-transparent" />
           {/* Enhanced red glow - larger and more visible */}
           <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/25 rounded-full blur-3xl" />
           {/* Additional red accent glow - stronger */}
