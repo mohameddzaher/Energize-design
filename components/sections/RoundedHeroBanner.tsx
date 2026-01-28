@@ -62,18 +62,20 @@ export default function RoundedHeroBanner({
 
         {/* Creative gradient overlays — readable text + vignette + soft red glow */}
         <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden>
-          {/* Main dark gradient with red tint */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/95 via-[#283b4a]/70 to-transparent" />
-          {/* Vertical gradient with red blend */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#283b4a]/60 via-transparent to-[#283b4a]/35" />
-          {/* Red tint overlay - creative mix */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/8 via-transparent to-[#dc2626]/12" />
-          {/* Right side dark overlay */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/25 to-transparent" />
+          {/* Main dark gradient with red tint - darker */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/98 via-[#283b4a]/80 to-transparent" />
+          {/* Vertical gradient with red blend - darker */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#283b4a]/75 via-transparent to-[#283b4a]/45" />
+          {/* Red tint overlay - creative mix - stronger */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/15 via-transparent to-[#dc2626]/20" />
+          {/* Right side dark overlay - darker */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/35 to-transparent" />
           {/* Enhanced red glow - larger and more visible */}
-          <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-[#dc2626]/15 rounded-full blur-3xl" />
-          {/* Additional red accent glow */}
-          <div className="absolute top-1/3 right-1/3 w-32 h-32 bg-[#dc2626]/8 rounded-full blur-2xl" />
+          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/22 rounded-full blur-3xl" />
+          {/* Additional red accent glow - stronger */}
+          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-[#dc2626]/15 rounded-full blur-2xl" />
+          {/* Extra red layer for depth */}
+          <div className="absolute bottom-1/4 left-1/4 w-36 h-36 bg-[#dc2626]/12 rounded-full blur-2xl" />
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
