@@ -41,7 +41,7 @@ export default function HeaderPill({
             <Link href="/" className="flex items-center flex-shrink-0">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative h-11 w-36 lg:h-13 lg:w-44"
+                className="relative h-14 w-44 lg:h-16 lg:w-52"
               >
                 <Image
                   src={logoSrc}

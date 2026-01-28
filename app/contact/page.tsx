@@ -47,7 +47,10 @@ export default function ContactPage() {
       <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
-            src={getGoogleDriveUrl("/images/projects/Offices/Offices-Makkah-03.jpg", false)}
+            src={getGoogleDriveUrl(
+              "/images/projects/Offices/Offices-Makkah-03.jpg",
+              false,
+            )}
             alt="Contact Background"
             fill
             className="object-cover"

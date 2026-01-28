@@ -20,7 +20,10 @@ export default function ProjectsPage() {
       <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
-            src={getGoogleDriveUrl("/images/projects/Studio/Studio-04.jpg", false)}
+            src={getGoogleDriveUrl(
+              "/images/projects/Studio/Studio-04.jpg",
+              false,
+            )}
             alt="Projects Background"
             fill
             className="object-cover"
