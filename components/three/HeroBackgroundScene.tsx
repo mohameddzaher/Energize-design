@@ -11,7 +11,7 @@ const BRAND_RED_LIGHT = "#ef4444"; // Lighter red
 
 function FloatingParticles() {
   const ref = useRef<THREE.Points>(null);
-  const count = 80; // Increased for better visibility
+  const count = 100; // Increased for better visibility
   const geometry = useMemo(() => {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
@@ -19,12 +19,12 @@ function FloatingParticles() {
     const redColor = new THREE.Color(BRAND_RED_LIGHT);
 
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 30;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 18;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
+      positions[i * 3] = (Math.random() - 0.5) * 35;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 18;
 
-      // Mix gold and red particles (60% gold, 40% red for more red visibility)
-      const color = Math.random() > 0.4 ? goldColor : redColor;
+      // Mix gold and red particles (50% gold, 50% red for better visibility)
+      const color = Math.random() > 0.5 ? goldColor : redColor;
       colors[i * 3] = color.r;
       colors[i * 3 + 1] = color.g;
       colors[i * 3 + 2] = color.b;
@@ -37,15 +37,16 @@ function FloatingParticles() {
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    ref.current.rotation.y = clock.getElapsedTime() * 0.05;
+    ref.current.rotation.y = clock.getElapsedTime() * 0.08;
+    ref.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.1) * 0.2;
   });
 
   return (
     <points ref={ref} geometry={geometry}>
       <pointsMaterial
-        size={0.5}
+        size={0.7}
         transparent
-        opacity={0.85}
+        opacity={1}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -66,11 +67,11 @@ function FloatingRing() {
 
   return (
     <mesh ref={ref} position={[4, 0, -2]}>
-      <torusGeometry args={[3, 0.1, 16, 40]} />
+      <torusGeometry args={[3.5, 0.12, 20, 50]} />
       <meshBasicMaterial
         color={BRAND_GOLD}
         transparent
-        opacity={0.5}
+        opacity={0.8}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -88,11 +89,11 @@ function RedRing() {
 
   return (
     <mesh ref={ref} position={[-4, 1.5, -1.5]}>
-      <torusGeometry args={[2.5, 0.08, 14, 32]} />
+      <torusGeometry args={[3, 0.1, 18, 40]} />
       <meshBasicMaterial
         color={BRAND_RED_LIGHT}
         transparent
-        opacity={0.45}
+        opacity={0.75}
         side={THREE.DoubleSide}
       />
     </mesh>
@@ -110,8 +111,12 @@ function SoftSphere() {
 
   return (
     <mesh ref={ref} position={[5, -0.5, -3]}>
-      <sphereGeometry args={[1.5, 32, 32]} />
-      <meshBasicMaterial color={BRAND_GOLD} transparent opacity={0.2} />
+      <sphereGeometry args={[2, 32, 32]} />
+      <meshBasicMaterial 
+        color={BRAND_GOLD} 
+        transparent 
+        opacity={0.45}
+      />
     </mesh>
   );
 }
@@ -182,7 +187,7 @@ function FloatingCube({
       <meshBasicMaterial
         color={color}
         transparent
-        opacity={0.25}
+        opacity={0.5}
         wireframe={Math.random() > 0.5}
       />
     </mesh>

@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
 
 const HeroBackgroundScene = dynamic(
   () => import("@/components/three/HeroBackgroundScene"),
@@ -24,60 +23,36 @@ export default function RoundedHeroBanner({
   titleLine2?: string;
   titleLine3?: string;
 }) {
-  const [showScene, setShowScene] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Lazy load Three.js scene only when in viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          // Delay loading slightly to prioritize initial render
-          setTimeout(() => setShowScene(true), 300);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  // Show animation immediately - no lazy loading
+  const showScene = true;
 
   return (
-    <section className="relative w-full" ref={containerRef}>
+    <section className="relative w-full">
       {/* Full-width hero container — 100% width, 3D as full background */}
       <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px]">
-        {/* 3D animation — full hero background (lazy loaded) */}
+        {/* 3D animation — full hero background */}
         <div className="absolute inset-0 z-0">
-          {showScene ? (
-            <HeroBackgroundScene />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-black" />
-          )}
+          <HeroBackgroundScene />
         </div>
 
-        {/* Creative gradient overlays — readable text + vignette + soft red glow */}
+        {/* Creative gradient overlays — readable text + vignette + soft red glow - reduced to show animation */}
         <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden>
           {/* Base dark gradient - very dark like reference */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-black" />
-          {/* Main dark gradient overlay - slightly reduced to show animation */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/96 via-[#283b4a]/85 to-black/75" />
-          {/* Vertical gradient - strong dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/65" />
-          {/* Red tint overlay - creative mix - stronger */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/20 via-transparent to-[#dc2626]/25" />
-          {/* Right side dark overlay - slightly reduced */}
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-950/70 to-black/80" />
+          {/* Main dark gradient overlay - reduced to show animation */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#283b4a]/85 via-[#283b4a]/70 to-black/60" />
+          {/* Vertical gradient - reduced dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/15 to-black/50" />
+          {/* Red tint overlay - creative mix */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/15 via-transparent to-[#dc2626]/20" />
+          {/* Right side dark overlay - reduced */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/30 to-transparent" />
           {/* Enhanced red glow - larger and more visible */}
-          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/25 rounded-full blur-3xl" />
-          {/* Additional red accent glow - stronger */}
-          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-[#dc2626]/20 rounded-full blur-2xl" />
+          <div className="absolute top-1/2 right-1/4 w-56 h-56 bg-[#dc2626]/20 rounded-full blur-3xl" />
+          {/* Additional red accent glow */}
+          <div className="absolute top-1/3 right-1/3 w-40 h-40 bg-[#dc2626]/15 rounded-full blur-2xl" />
           {/* Extra red layer for depth */}
-          <div className="absolute bottom-1/4 left-1/4 w-36 h-36 bg-[#dc2626]/18 rounded-full blur-2xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-36 h-36 bg-[#dc2626]/12 rounded-full blur-2xl" />
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
