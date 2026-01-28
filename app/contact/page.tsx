@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden pt-20 lg:pt-24">
+      <section className="relative h-40 lg:h-34 flex items-center justify-center overflow-hidden mt-20 lg:mt-18">
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Offices/Offices-Makkah-03.jpg"
