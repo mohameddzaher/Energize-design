@@ -71,48 +71,53 @@ export default function RoundedHeroBanner({
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-24 lg:pt-28">
-          {/* Left: text block */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 xl:px-20 py-12 sm:py-16 lg:col-span-6 lg:max-w-[580px]">
-            <div className="mb-4 inline-flex w-fit rounded-full bg-[#e4ba8b] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
+          {/* Left: text block — wider on desktop */}
+          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 xl:px-16 py-12 sm:py-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
+            <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
               25+ Projects Delivered
             </div>
-            <p className="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-[#e4ba8b]/90 mb-3 sm:mb-4">
+            <p className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#e4ba8b]/90 mb-2.5 sm:mb-3">
               {eyebrow}
             </p>
-            <h1 className="font-playfair text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-[1.08] text-white mb-5 sm:mb-6">
+            <h1 className="font-playfair text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-[1.1] text-white mb-4 sm:mb-5">
               {titleLine1}
               <br />
               <span className="italic text-[#e4ba8b]">{titleLine2}</span>
               <br />
               {titleLine3}
             </h1>
-            <div className="flex flex-col sm:flex-row gap-3 mt-2">
+            {/* Additional description text */}
+            <p className="text-xs sm:text-sm lg:text-base text-white/85 leading-relaxed mb-6 sm:mb-7 max-w-[600px]">
+              We transform architectural concepts into living experiences, where every detail is intentional, 
+              every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="/projects"
-                className="inline-flex items-center justify-center rounded-full bg-[#e4ba8b] px-7 py-3 text-sm font-medium text-[#283b4a] shadow-lg transition-all duration-200 hover:bg-[#d4a97a] hover:shadow-xl hover:scale-[1.02]"
+                className="inline-flex items-center justify-center rounded-full bg-[#e4ba8b] px-6 py-2.5 text-xs sm:text-sm font-medium text-[#283b4a] shadow-lg transition-all duration-200 hover:bg-[#d4a97a] hover:shadow-xl hover:scale-[1.02]"
               >
                 View Projects
               </a>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/10 hover:border-white/60"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-6 py-2.5 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-white/10 hover:border-white/60"
               >
                 Get In Touch
               </a>
             </div>
           </div>
 
-          {/* Right: creative space with abstract elements */}
-          <div className="hidden lg:flex lg:col-span-6 items-center justify-center relative p-8 xl:p-12">
+          {/* Right: creative space with abstract elements — smaller */}
+          <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 items-center justify-center relative p-8 xl:p-12">
             {/* Large decorative number */}
-            <div className="absolute top-12 right-16 xl:right-24 text-[180px] xl:text-[220px] font-playfair font-bold text-white/8 leading-none select-none">
+            <div className="absolute top-12 right-16 xl:right-24 text-[140px] xl:text-[180px] font-playfair font-bold text-white/6 leading-none select-none">
               25
             </div>
 
             {/* Floating geometric shapes */}
-            <div className="absolute top-20 right-8 xl:right-16 w-16 h-16 rounded-xl border-2 border-[#e4ba8b]/30 rotate-12" />
-            <div className="absolute bottom-24 right-12 xl:right-20 w-12 h-12 rounded-full border-2 border-white/20" />
-            <div className="absolute top-1/2 right-4 xl:right-8 w-1 h-24 bg-gradient-to-b from-transparent via-[#e4ba8b]/40 to-transparent" />
+            <div className="absolute top-20 right-8 xl:right-16 w-14 h-14 rounded-xl border-2 border-[#e4ba8b]/25 rotate-12" />
+            <div className="absolute bottom-24 right-12 xl:right-20 w-10 h-10 rounded-full border-2 border-white/15" />
+            <div className="absolute top-1/2 right-4 xl:right-8 w-1 h-20 bg-gradient-to-b from-transparent via-[#e4ba8b]/30 to-transparent" />
           </div>
         </div>
       </div>
