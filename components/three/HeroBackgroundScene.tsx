@@ -407,11 +407,11 @@ function GridLinesSimple() {
 function AmbientScene() {
   return (
     <>
-      <color attach="background" args={[BRAND_DARK]} />
-      <ambientLight intensity={0.6} />
-      <pointLight position={[10, 5, 5]} intensity={0.4} color={BRAND_GOLD} />
-      <pointLight position={[-6, 4, 2]} intensity={0.35} color={BRAND_RED_LIGHT} />
-      <pointLight position={[0, -5, 3]} intensity={0.25} color={BRAND_RED_LIGHT} />
+      <ambientLight intensity={0.8} />
+      <pointLight position={[10, 5, 5]} intensity={0.6} color={BRAND_GOLD} />
+      <pointLight position={[-6, 4, 2]} intensity={0.5} color={BRAND_RED_LIGHT} />
+      <pointLight position={[0, -5, 3]} intensity={0.4} color={BRAND_RED_LIGHT} />
+      <pointLight position={[0, 8, 0]} intensity={0.3} color={BRAND_GOLD} />
       <FloatingParticles />
       <FloatingRing />
       <RedRing />
@@ -427,18 +427,15 @@ function AmbientScene() {
 
 export default function HeroBackgroundScene() {
   return (
-    <div className="absolute inset-0 w-full h-full will-change-transform">
+    <div className="absolute inset-0 w-full h-full will-change-transform z-0">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 55 }}
         gl={{
-          antialias: false, // Disable for performance
-          alpha: false,
+          antialias: true,
+          alpha: true,
           powerPreference: "high-performance",
-          stencil: false,
-          depth: false,
         }}
-        dpr={[1, 1.5]} // Reduced from [1, 2]
-        performance={{ min: 0.5 }} // Lower performance threshold
+        dpr={[1, 2]}
       >
         <AmbientScene />
       </Canvas>
