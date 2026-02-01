@@ -23,30 +23,37 @@
 ## Required Files:
 
 ### Boys Bedroom:
+
 - BBR-01.jpg to BBR-06.jpg
 - BoysBedroom Video.mp4
 
 ### Girls Bedroom:
+
 - Girls Bedroom-01.jpg to Girls Bedroom-04.jpg
 - GBR.mp4
 
 ### Jewelry Store:
+
 - Jewelry Store-01.jpg to Jewelry Store-10.jpg
 - Jewelry Store Video.mov
 
 ### LANO Cafe:
+
 - LANO CAFE-01.jpg, LANO CAFE-02.jpg, LANO CAFE-04.jpg to LANO CAFE-09.jpg
 - Lano Cafe .mp4
 
 ### Master Bedroom:
+
 - Bedroom-01.jpg to Bedroom-06.jpg
 - Master Bedroom.mp4
 
 ### Offices:
+
 - Offices-Makkah-01.jpg to Offices-Makkah-08.jpg
 - Offices Video.mp4
 
 ### Studio:
+
 - Studio-01.jpg to Studio-11.jpg
 - STUDIO.mov
 

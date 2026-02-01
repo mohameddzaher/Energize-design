@@ -115,10 +115,10 @@ export default function ContactPage() {
                     Phone
                   </h3>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+966532032973"
                     className="text-sm text-white/80 hover:text-[#e4ba8b] transition-colors"
                   >
-                    +1 (234) 567-890
+                    +966 53 203 2973
                   </a>
                 </div>
                 <div>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-3 py-2 text-sm bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:border-[#e4ba8b] transition-colors text-white placeholder-white/50"
-                  placeholder="+1 (234) 567-890"
+                  placeholder="+966 53 203 2973"
                 />
               </div>
               <div>
