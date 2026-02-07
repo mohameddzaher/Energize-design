@@ -15,6 +15,7 @@ export default function HeaderPill({
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Virtual Tours", href: "/vr-real-estate" },
     { label: "Projects", href: "/projects" },
   ],
   ctaLabel = "Contact",

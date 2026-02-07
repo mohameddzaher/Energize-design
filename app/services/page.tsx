@@ -8,8 +8,12 @@ import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import PageIntro from "@/components/sections/PageIntro";
 import { getGoogleDriveUrl } from "@/lib/googleDrive";
+import { Glasses, ArrowRight } from "lucide-react";
 
 export default function ServicesPage() {
+  const innovationServices = services.filter(
+    (s) => s.category === "Innovation & Technology",
+  );
   const designServices = services.filter(
     (s) => s.category === "Design & Creative Services",
   );
@@ -63,6 +67,73 @@ export default function ServicesPage() {
         title="End-to-End Excellence"
         description="From conceptual design to final execution, we orchestrate every phase of your project with precision and passion, ensuring that your vision materializes into spaces that not only meet but exceed expectations."
       />
+
+      {/* Innovation & Technology - Featured Virtual Tours */}
+      <Section background="beige">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-6"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#283b4a] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg mb-4">
+            <Glasses className="w-3.5 h-3.5" />
+            New Technology
+          </div>
+          <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a]">
+            Innovation & Technology
+          </h2>
+        </motion.div>
+
+        {innovationServices.map((service, index) => (
+          <motion.div
+            key={service.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+              <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src={service.image || "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&q=80"}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div>
+                <h3 className="text-lg lg:text-xl font-bold text-[#283b4a] mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-[#283b4a]/80 leading-relaxed mb-4">
+                  {service.fullDescription}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {service.features.slice(0, 4).map((feature) => (
+                    <span
+                      key={feature}
+                      className="text-[10px] px-2.5 py-1 bg-white text-[#283b4a] rounded-full shadow-sm"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href="/vr-real-estate"
+                  className="inline-flex items-center justify-center rounded-full bg-[#283b4a] px-6 py-2.5 text-xs font-medium text-white shadow-lg transition-all duration-200 hover:bg-[#1f2d38] hover:shadow-xl hover:scale-[1.02]"
+                >
+                  Explore VR Experience
+                  <ArrowRight className="ml-2 w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </Section>
 
       {/* Design & Creative Services */}
       <Section background="dark">

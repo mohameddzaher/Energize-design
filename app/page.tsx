@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import RoundedHeroBanner from "@/components/sections/RoundedHeroBanner";
+import VRRealEstatePreview from "@/components/sections/VRRealEstatePreview";
 import CenterQuoteSplitImages from "@/components/sections/CenterQuoteSplitImages";
 import CollageShowcase from "@/components/sections/CollageShowcase";
 import ServicesPreview from "@/components/sections/ServicesPreview";
@@ -33,6 +34,9 @@ export default function Home() {
         titleLine2="in Modern Design"
         titleLine3="& Construction"
       />
+
+      {/* Virtual Tours Preview - New Service */}
+      <VRRealEstatePreview background="light" />
 
       {/* Center Quote with Split Images */}
       <CenterQuoteSplitImages

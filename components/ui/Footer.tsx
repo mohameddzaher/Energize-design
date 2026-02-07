@@ -15,6 +15,9 @@ export default function Footer() {
       { name: 'Services', href: '/services' },
       { name: 'Projects', href: '/projects' },
     ],
+    innovation: [
+      { name: 'Virtual Tours', href: '/vr-real-estate' },
+    ],
     resources: [
       { name: 'Contact', href: '/contact' },
       { name: 'Linktree', href: 'https://linktr.ee/Energize_Design', external: true },
@@ -124,7 +127,7 @@ export default function Footer() {
             </motion.ul>
           </div>
 
-          {/* Resources Links */}
+          {/* Innovation Links */}
           <div className="text-center md:text-left">
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
@@ -133,7 +136,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-bold mb-5 text-white text-sm uppercase tracking-wider"
             >
-              Resources
+              Innovation
             </motion.h4>
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
@@ -142,6 +145,17 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-3"
             >
+              {footerLinks.innovation.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   {link.external ? (

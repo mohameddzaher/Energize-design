@@ -11,6 +11,25 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: '0',
+    title: 'Immersive Virtual Tours',
+    slug: 'vr-real-estate',
+    category: 'Innovation & Technology',
+    description: 'Experience your future space in immersive 3D virtual reality before construction begins.',
+    fullDescription: 'Step into your future home before it exists. Using cutting-edge VR technology, you can walk through your space, change wall colors, switch materials, adjust lighting, rearrange furniture, and see realistic results — all before construction begins. Make confident design decisions with complete visual clarity.',
+    features: [
+      'Immersive VR walkthrough experience',
+      'Real-time color and material customization',
+      'Live furniture placement and layout changes',
+      'Photorealistic lighting simulation',
+      'Full spatial understanding before construction',
+      'Confident decision-making process',
+      'Eliminate costly changes during construction',
+      'Experience multiple design options instantly',
+    ],
+    image: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&q=80',
+  },
+  {
     id: '1',
     title: 'Architectural & Interior Design',
     slug: 'architectural-interior-design',
