@@ -140,7 +140,7 @@ export default function VRRealEstatePage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
             Immersive Virtual Tours
@@ -148,7 +148,7 @@ export default function VRRealEstatePage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
             Experience your dream space in stunning 3D before construction begins
@@ -169,7 +169,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div>
@@ -203,7 +203,7 @@ export default function VRRealEstatePage() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.35 }}
                 className="relative h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl"
               >
                 <Image
@@ -226,7 +226,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-center mb-10"
           >
             <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-[#283b4a] mb-4">
@@ -248,7 +248,7 @@ export default function VRRealEstatePage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.25, delay: index * 0.04 }}
                   className="relative"
                 >
                   <div className="bg-white rounded-2xl p-6 shadow-lg ring-1 ring-black/5 h-full hover:shadow-xl transition-shadow duration-300">
@@ -283,7 +283,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-center mb-10"
           >
             <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-white mb-4">
@@ -305,7 +305,7 @@ export default function VRRealEstatePage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.25, delay: index * 0.04 }}
                   className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/15 transition-colors duration-300"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#e4ba8b]/20 flex items-center justify-center mb-4">
@@ -331,7 +331,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-center mb-10"
           >
             <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-[#283b4a] mb-4">
@@ -350,7 +350,7 @@ export default function VRRealEstatePage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.25, delay: index * 0.04 }}
                 className={`relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ${
                   index === 0 || index === 5 ? "lg:col-span-2 h-64" : "h-48"
                 }`}
@@ -359,7 +359,7 @@ export default function VRRealEstatePage() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  className="object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
@@ -375,7 +375,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-center mb-8"
           >
             <h2 className="text-2xl lg:text-3xl font-playfair font-bold text-white mb-4">
@@ -391,7 +391,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
             className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
           >
             <video
@@ -417,7 +417,7 @@ export default function VRRealEstatePage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             <div className="mb-4 inline-flex w-fit rounded-full bg-[#283b4a] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg">
               Start Your Journey

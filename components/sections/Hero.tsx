@@ -23,13 +23,13 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.35, delay: 0.08 }}
           className="max-w-4xl mx-auto"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.35, delay: 0.4 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
           >
             <span className="text-[#283b4a]">Raising Design</span>
@@ -40,7 +40,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.35, delay: 0.6 }}
                   className="text-lg md:text-lg text-[#283b4a]/80 mb-8 max-w-2xl mx-auto leading-relaxed text-justify"
           >
             Merging refined craftsmanship with modern innovation to ensure trust, distinction, and long-term value in every project.
@@ -49,7 +49,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.35, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button href="/projects" variant="primary" size="lg">

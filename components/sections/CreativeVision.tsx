@@ -15,7 +15,7 @@ export default function CreativeVision({ background = 'white' }: { background?: 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className={`text-xl lg:text-2xl font-bold text-center mb-8 ${
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
@@ -28,7 +28,7 @@ export default function CreativeVision({ background = 'white' }: { background?: 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="space-y-4 h-full flex flex-col"
           >
             <div className="relative h-48 lg:h-56 rounded-xl overflow-hidden shadow-lg">
@@ -51,7 +51,7 @@ export default function CreativeVision({ background = 'white' }: { background?: 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="space-y-4 h-full flex flex-col"
           >
             <div className="relative h-48 lg:h-56 rounded-xl overflow-hidden shadow-lg">

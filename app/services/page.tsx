@@ -45,7 +45,7 @@ export default function ServicesPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
             Our Services
@@ -53,7 +53,7 @@ export default function ServicesPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
             Comprehensive design and construction solutions tailored to your
@@ -74,7 +74,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-6"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-[#283b4a] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg mb-4">
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="max-w-5xl mx-auto"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
@@ -141,7 +141,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold mb-8 text-center text-white"
         >
           Design & Creative Services
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.04 }}
                 whileHover={{ scale: 1.02, y: -3 }}
                 className="bg-[#fff9f2] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full"
               >
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                     }
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
@@ -202,7 +202,7 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-8 text-center"
         >
           Execution & Construction Services
@@ -214,7 +214,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.04 }}
                 whileHover={{ scale: 1.02, y: -3 }}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full"
               >
@@ -229,7 +229,7 @@ export default function ServicesPage() {
                     }
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>

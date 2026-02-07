@@ -26,7 +26,7 @@ export default function CoreValues({ background = 'light' }: { background?: 'whi
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className={`text-xl lg:text-2xl font-bold text-center mb-8 ${
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
@@ -40,7 +40,7 @@ export default function CoreValues({ background = 'light' }: { background?: 'whi
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
             className="relative rounded-xl overflow-hidden shadow-xl h-full"
           >
             <div className="relative w-full h-full">
@@ -58,7 +58,7 @@ export default function CoreValues({ background = 'light' }: { background?: 'whi
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
             className="flex flex-col justify-between h-full"
           >
             <div className="grid grid-cols-1 gap-2">

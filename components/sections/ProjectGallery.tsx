@@ -18,7 +18,7 @@ export default function ProjectGallery({ images, projectName }: { images: string
             src={image}
             alt={`${projectName} - Image ${index + 1}`}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="object-cover group-hover:scale-110 transition-transform duration-300"
             loading={index < 4 ? 'eager' : 'lazy'}
             priority={index < 4}
           />

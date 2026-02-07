@@ -26,7 +26,7 @@ export default function ProjectOverview({ project }: { project: any }) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
         className="text-center mb-8"
       >
         <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">Project Overview</h2>
@@ -44,7 +44,7 @@ export default function ProjectOverview({ project }: { project: any }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
               className="bg-[#fff9f2] p-5 rounded-xl border border-[#e4ba8b]/20 h-full"
             >
               <div className="flex items-start space-x-4 h-full">

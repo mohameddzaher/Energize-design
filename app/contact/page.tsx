@@ -62,7 +62,7 @@ export default function ContactPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
             Get In Touch
@@ -70,7 +70,7 @@ export default function ContactPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
             Let&apos;s discuss how we can bring your vision to life
@@ -93,7 +93,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
                 Contact Information
@@ -213,7 +213,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
               onSubmit={handleSubmit}
               className="space-y-4"
             >

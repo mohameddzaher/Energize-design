@@ -28,7 +28,7 @@ export default function AboutPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
             About Energize Design
@@ -36,7 +36,7 @@ export default function AboutPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs lg:text-sm text-white/90 max-w-2xl mx-auto"
           >
             Crafting timeless spaces through innovation and excellence
@@ -57,7 +57,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
             className="mb-8"
           >
             <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.35 }}
                 className="order-2 lg:order-1"
               >
                 <p className="text-sm lg:text-base text-white/80 leading-relaxed text-justify">
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.35 }}
                 className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-xl order-1 lg:order-2"
               >
                 <Image
@@ -113,7 +113,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
               className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
             >
               <Image
@@ -130,7 +130,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">
                 Our Vision
@@ -153,7 +153,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-[#e4ba8b] mb-4">
                 Our Mission
@@ -168,7 +168,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
               className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-black/5"
             >
               <Image
@@ -192,7 +192,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-center text-[#283b4a] mb-8"
           >
             Leadership
@@ -202,7 +202,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
               className="relative flex justify-center"
             >
               <div className="relative w-48 h-48">
@@ -219,7 +219,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
             >
               <div className="mb-4">
                 <span className="text-xs lg:text-sm text-[#e4ba8b] font-semibold">

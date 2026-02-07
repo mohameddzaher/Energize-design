@@ -8,7 +8,7 @@ export default function ServiceIntro({ title, description }: { title: string; de
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.3 }}
       className="text-center"
     >
       <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">{title}</h2>

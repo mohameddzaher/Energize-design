@@ -33,7 +33,7 @@ export default function Testimonials({ background = 'dark' }: { background?: 'wh
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
                  className={`text-2xl lg:text-3xl font-playfair text-center mb-6 ${
                    background === 'dark' ? 'text-white' : 'text-[#283b4a]'
                  }`}
@@ -60,7 +60,7 @@ export default function Testimonials({ background = 'dark' }: { background?: 'wh
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
               className={`rounded-xl p-5 h-full flex flex-col shadow-lg hover:shadow-xl ring-1 ring-black/5 transition-all duration-300 ${
                 background === 'dark' ? 'bg-white/10 text-white' : 'bg-white'
               }`}

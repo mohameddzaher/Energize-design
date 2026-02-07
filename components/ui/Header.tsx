@@ -23,7 +23,7 @@ export default function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.3 }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full bg-white shadow-lg"
     >
       <nav className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl w-full">

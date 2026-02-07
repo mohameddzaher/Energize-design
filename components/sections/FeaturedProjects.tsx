@@ -46,7 +46,7 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
                     src={project.images[0]}
                     alt={project.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-2 left-2">
@@ -85,7 +85,7 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
                   src={project.images[0]}
                   alt={project.name}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-2 left-2">

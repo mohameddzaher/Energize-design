@@ -19,7 +19,7 @@ export default function ServiceContent({ service }: { service: any }) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
         className="mb-8"
       >
         <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">Service Overview</h2>
@@ -33,7 +33,7 @@ export default function ServiceContent({ service }: { service: any }) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.08 }}
       >
         <h3 className="text-lg lg:text-xl font-bold text-[#283b4a] mb-4">What We Offer</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

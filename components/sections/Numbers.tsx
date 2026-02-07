@@ -55,7 +55,7 @@ export default function Numbers({ background = 'dark' }: { background?: 'white' 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            transition={{ duration: 0.3, delay: index * 0.04 }}
             className="text-center"
           >
             <div className={`text-3xl lg:text-4xl font-bold mb-2 ${

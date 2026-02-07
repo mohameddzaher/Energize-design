@@ -35,7 +35,7 @@ export default function ProjectsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
             Our Projects
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
             Showcasing excellence in design and execution
@@ -66,7 +66,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02, y: -3 }}
                 className="bg-[#fff9f2] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer h-full"
               >
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
                     }
                     alt={project.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   <div className="absolute top-3 right-3">
@@ -114,7 +114,7 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-8 text-center"
         >
           Featured Projects
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
                       }
                       alt={project.name}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-3 right-3">

@@ -27,7 +27,7 @@ export default function VisionMission({ background = 'dark' }: { background?: 'w
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-center text-[#e4ba8b] mb-8"
         >
           Vision & Mission
@@ -42,7 +42,7 @@ export default function VisionMission({ background = 'dark' }: { background?: 'w
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: index * 0.04 }}
                 className="bg-[#283b4a] rounded-xl p-5 lg:p-6 border border-[#e4ba8b]/20 h-full flex flex-col"
               >
                 <div className="flex items-center mb-3">

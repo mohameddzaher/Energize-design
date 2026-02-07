@@ -16,7 +16,7 @@ export default function PageHero({ title, description, imageSrc }: PageHeroProps
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="relative overflow-hidden rounded-xl bg-[#283b4a] shadow-xl ring-1 ring-black/5 min-h-[400px] sm:min-h-[480px] lg:min-h-[520px]"
         >
           <div className="absolute inset-0">
@@ -34,7 +34,7 @@ export default function PageHero({ title, description, imageSrc }: PageHeroProps
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="font-playfair text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight text-white mb-4"
             >
               {title}
@@ -43,7 +43,7 @@ export default function PageHero({ title, description, imageSrc }: PageHeroProps
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.3, delay: 0.08 }}
                 className="text-sm sm:text-base lg:text-lg text-white/90 max-w-2xl"
               >
                 {description}

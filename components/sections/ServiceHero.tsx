@@ -12,7 +12,7 @@ export default function ServiceHero({ service }: { service: any }) {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-white mb-2"
         >
           {service.title}
@@ -20,7 +20,7 @@ export default function ServiceHero({ service }: { service: any }) {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="text-xs lg:text-sm text-white/90"
         >
           {service.category}

@@ -41,7 +41,7 @@ export default function VRRealEstatePreview({ background = 'dark' }: { backgroun
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
           >
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
               New Service
@@ -78,7 +78,7 @@ export default function VRRealEstatePreview({ background = 'dark' }: { backgroun
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.25, delay: index * 0.04 }}
                     className={`rounded-xl p-4 ${
                       isDark ? 'bg-white/10' : 'bg-white shadow-md ring-1 ring-black/5'
                     }`}
@@ -118,7 +118,7 @@ export default function VRRealEstatePreview({ background = 'dark' }: { backgroun
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.35 }}
             className="relative"
           >
             <div className="relative h-80 lg:h-[480px] rounded-2xl overflow-hidden shadow-2xl">

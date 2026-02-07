@@ -13,7 +13,7 @@ export default function MapSection({ background = 'dark' }: { background?: 'whit
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-6"
         >
           <div className="flex items-center justify-center mb-3">
@@ -38,7 +38,7 @@ export default function MapSection({ background = 'dark' }: { background?: 'whit
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.08 }}
           className="w-full h-64 rounded-xl overflow-hidden shadow-lg block relative cursor-pointer group"
         >
           <iframe

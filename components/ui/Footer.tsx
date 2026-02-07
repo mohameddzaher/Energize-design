@@ -50,7 +50,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
             >
               <Link href="/" className="inline-block mb-4">
                 <div className="relative h-14 w-48 lg:h-16 lg:w-56 mx-auto md:mx-0">
@@ -101,7 +101,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="font-bold mb-5 text-white text-sm uppercase tracking-wider"
             >
               Company
@@ -110,7 +110,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.08 }}
               className="space-y-3"
             >
               {footerLinks.company.map((link) => (
@@ -133,7 +133,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="font-bold mb-5 text-white text-sm uppercase tracking-wider"
             >
               Innovation
@@ -142,7 +142,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.08 }}
               className="space-y-3"
             >
               {footerLinks.innovation.map((link) => (
@@ -188,7 +188,7 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.12 }}
           className="border-t border-[#fff9f2]/10 pt-6 mt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#fff9f2]/50 space-y-2 md:space-y-0">

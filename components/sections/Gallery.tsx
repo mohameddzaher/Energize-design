@@ -22,7 +22,7 @@ export default function Gallery({ background = 'beige' }: { background?: 'white'
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
         className="mb-6 text-center"
       >
                <h2 className={`text-2xl lg:text-3xl font-playfair mb-3 ${
@@ -59,7 +59,7 @@ export default function Gallery({ background = 'beige' }: { background?: 'white'
                 src={item.src}
                 alt={`Gallery from ${item.project}`}
                 fill
-                className="object-cover rounded-xl group-hover:scale-110 transition-transform duration-500 "
+                className="object-cover rounded-xl group-hover:scale-110 transition-transform duration-300 "
               />
             </motion.div>
           </SwiperSlide>

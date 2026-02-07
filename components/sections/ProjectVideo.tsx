@@ -98,19 +98,19 @@ export default function ProjectVideo({
         <motion.div
           initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 12 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.08 }}
           className="w-14 h-14 rounded-xl border-2 border-[#e4ba8b]/40 shadow-sm"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.25, delay: 0.12 }}
           className="w-1 h-32 bg-gradient-to-b from-transparent via-[#e4ba8b]/50 to-transparent"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.25, delay: 0.4 }}
           className="w-10 h-10 rounded-full border-2 border-[#e4ba8b]/30"
         />
 
@@ -118,7 +118,7 @@ export default function ProjectVideo({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.25, delay: 0.5 }}
           className="text-right mt-2"
         >
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] mb-1.5 font-medium">
@@ -141,7 +141,7 @@ export default function ProjectVideo({
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.12 }}
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
           <div className="w-[260px] sm:w-[300px] h-[460px] sm:h-[540px] rounded-2xl border border-[#e4ba8b]/20" />
@@ -182,19 +182,19 @@ export default function ProjectVideo({
         <motion.div
           initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
           animate={{ opacity: 1, scale: 1, rotate: -12 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.08 }}
           className="w-12 h-12 rounded-full border-2 border-[#283b4a]/20 shadow-sm"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.25, delay: 0.12 }}
           className="w-1 h-28 bg-gradient-to-b from-transparent via-[#e4ba8b]/40 to-transparent"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.25, delay: 0.4 }}
           className="w-16 h-16 rounded-xl border-2 border-[#e4ba8b]/25 rotate-[-8deg]"
         />
 
@@ -202,7 +202,7 @@ export default function ProjectVideo({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.25, delay: 0.5 }}
           className="text-left mt-2"
         >
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] mb-1.5 font-medium">
