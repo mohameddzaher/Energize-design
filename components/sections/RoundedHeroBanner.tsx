@@ -29,7 +29,7 @@ export default function RoundedHeroBanner({
   return (
     <section className="relative w-full">
       {/* Full-width hero container — 100% width, 3D as full background */}
-      <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[520px] sm:min-h-[580px] lg:min-h-[720px] xl:min-h-[760px]">
+      <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[780px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px]">
         {/* 3D animation — full hero background */}
         <div className="absolute inset-0 z-0">
           <HeroBackgroundScene />
@@ -56,11 +56,11 @@ export default function RoundedHeroBanner({
         </div>
 
         {/* Content layer — pt for header overlap so hero is visible from top */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[520px] sm:min-h-[580px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-[88px]">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[780px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px] pt-20 lg:pt-[88px]">
           {/* Left: text block — wider on desktop */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 xl:px-16 pt-6 sm:pt-12 lg:pt-14 xl:pt-16 pb-8 sm:pb-16 lg:col-span-8 xl:col-span-7 lg:max-w-[720px] xl:max-w-[800px]">
             <div className="mb-3 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
-              25+ Projects Delivered
+              290+ Projects Delivered
             </div>
             <p className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#e4ba8b]/90 mb-2.5 sm:mb-3">
               {eyebrow}
@@ -93,13 +93,36 @@ export default function RoundedHeroBanner({
                 Get In Touch
               </a>
             </div>
+
+            {/* Stats - visible on mobile to fill space */}
+            <div className="grid grid-cols-3 gap-4 mt-8 lg:hidden">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-playfair font-bold text-[#e4ba8b]">290+</div>
+                <div className="text-[9px] sm:text-[10px] text-white/60 uppercase tracking-wider mt-1">Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-playfair font-bold text-[#e4ba8b]">8+</div>
+                <div className="text-[9px] sm:text-[10px] text-white/60 uppercase tracking-wider mt-1">Years</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-playfair font-bold text-[#e4ba8b]">100%</div>
+                <div className="text-[9px] sm:text-[10px] text-white/60 uppercase tracking-wider mt-1">Satisfaction</div>
+              </div>
+            </div>
           </div>
 
-          {/* Right: creative space with abstract elements — smaller */}
+          {/* Right: creative space with abstract elements */}
           <div className="hidden lg:flex lg:col-span-4 xl:col-span-5 items-center justify-center relative p-8 xl:p-12">
-            {/* Large decorative number */}
-            <div className="absolute top-12 right-16 xl:right-24 text-[140px] xl:text-[180px] font-playfair font-bold text-white/6 leading-none select-none">
-              25
+            {/* Stats on desktop */}
+            <div className="absolute top-16 right-16 xl:right-24 flex flex-col gap-6">
+              <div className="text-right">
+                <div className="text-5xl xl:text-6xl font-playfair font-bold text-white/10 leading-none">290+</div>
+                <div className="text-[10px] text-white/30 uppercase tracking-wider mt-1">Projects Delivered</div>
+              </div>
+              <div className="text-right">
+                <div className="text-5xl xl:text-6xl font-playfair font-bold text-white/10 leading-none">8+</div>
+                <div className="text-[10px] text-white/30 uppercase tracking-wider mt-1">Years Experience</div>
+              </div>
             </div>
 
             {/* Floating geometric shapes */}
