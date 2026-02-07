@@ -103,6 +103,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preconnect to external resources for faster loading */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://assets.mixkit.co" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://assets.mixkit.co" />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <HeaderPill />
         <main className="pt-0 w-full overflow-x-hidden">{children}</main>

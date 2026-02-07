@@ -77,7 +77,7 @@ const nextConfig: NextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['framer-motion', 'lucide-react', 'react-icons'],
   },
   
   // Turbopack config (Next.js 16 uses Turbopack by default)
