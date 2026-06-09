@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "WebFetch(domain:www.pinterest.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:mixkit.co)",
+      "WebFetch(domain:coverr.co)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:pixabay.com)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
