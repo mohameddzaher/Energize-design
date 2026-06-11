@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cairo } from "next/font/google";
 import "./globals.css";
 import HeaderPill from "@/components/ui/HeaderPill";
 import Footer from "@/components/ui/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -14,6 +15,12 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
   display: "swap",
 });
 
@@ -102,19 +109,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         {/* Preconnect to external resources for faster loading */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://assets.mixkit.co" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://assets.mixkit.co" />
+        {/* Apply saved language direction before paint to avoid a flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var l=localStorage.getItem('energize-lang');if(l==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}else{document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}})();`,
+          }}
+        />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <HeaderPill />
-        <main className="pt-0 w-full overflow-x-hidden">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+      <body
+        className={`${inter.variable} ${playfair.variable} ${cairo.variable} antialiased`}
+      >
+        <LanguageProvider>
+          <HeaderPill />
+          <main className="pt-0 w-full overflow-x-hidden">{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+        </LanguageProvider>
       </body>
     </html>
   );

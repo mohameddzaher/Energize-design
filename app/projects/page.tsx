@@ -6,14 +6,17 @@ import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
-import { projects } from "@/lib/projects";
+import { projects as allProjects, localizeProject } from "@/lib/projects";
 import PageIntro from "@/components/sections/PageIntro";
 import { getGoogleDriveUrl } from "@/lib/googleDrive";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
 export default function ProjectsPage() {
+  const { lang, t } = useLanguage();
+  const projects = allProjects.map((p) => localizeProject(p, lang));
   return (
     <>
       {/* Hero Section */}
@@ -38,7 +41,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
-            Our Projects
+            {t("أعمالنا", "Our Projects")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -46,15 +49,18 @@ export default function ProjectsPage() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
-            Showcasing excellence in design and execution
+            {t("نُبرز التميّز في التصميم والتنفيذ", "Showcasing excellence in design and execution")}
           </motion.p>
         </div>
       </section>
 
       {/* Page Intro Section */}
       <PageIntro
-        title="Portfolio of Possibilities"
-        description="Each project embodies a unique narrative of transformation, where client aspirations merge with our creative expertise to produce spaces that are both functionally superior and aesthetically compelling."
+        title={t("سجلّ من الإمكانات", "Portfolio of Possibilities")}
+        description={t(
+          "يجسّد كل مشروع حكاية فريدة من التحوّل، حيث تتلاقى تطلعات العميل مع خبرتنا الإبداعية لإنتاج مساحات متفوّقة وظيفيًا وآسرة جماليًا.",
+          "Each project embodies a unique narrative of transformation, where client aspirations merge with our creative expertise to produce spaces that are both functionally superior and aesthetically compelling.",
+        )}
       />
 
       {/* Projects Grid */}
@@ -117,7 +123,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-8 text-center"
         >
-          Featured Projects
+          {t("أعمال مختارة", "Featured Projects")}
         </motion.h2>
         <Swiper
           modules={[Autoplay, Navigation, EffectCoverflow]}

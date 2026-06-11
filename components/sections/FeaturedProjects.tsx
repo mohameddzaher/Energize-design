@@ -4,12 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
-import { projects } from '@/lib/projects';
+import { projects, localizeProject } from '@/lib/projects';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function FeaturedProjects({ background = 'beige' }: { background?: 'white' | 'light' | 'dark' | 'beige' }) {
-  const featuredProjects = projects.slice(0, 6);
+  const { lang, t } = useLanguage();
+  const featuredProjects = projects.slice(0, 6).map((p) => localizeProject(p, lang));
   const isDark = background === 'dark';
 
   return (
@@ -20,14 +22,17 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
         >
-          Featured Projects
+          {t('أعمال مختارة', 'Featured Projects')}
         </h2>
         <p
           className={`text-xs lg:text-sm ${
             isDark ? 'text-white/80' : 'text-[#283b4a]/70'
           }`}
         >
-          Showcasing our commitment to excellence in design and execution
+          {t(
+            'نُبرز التزامنا بالتميّز في التصميم والتنفيذ',
+            'Showcasing our commitment to excellence in design and execution',
+          )}
         </p>
       </div>
 
@@ -111,7 +116,7 @@ export default function FeaturedProjects({ background = 'beige' }: { background?
 
       <div className="text-center mt-6">
         <Button href="/projects" variant={isDark ? 'outline-light' : 'outline'} size="md">
-          View All Projects
+          {t('عرض كل الأعمال', 'View All Projects')}
         </Button>
       </div>
     </Section>

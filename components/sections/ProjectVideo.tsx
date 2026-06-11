@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface ProjectVideoProps {
   video?: string;
@@ -12,6 +13,7 @@ export default function ProjectVideo({
   video,
   projectName,
 }: ProjectVideoProps) {
+  const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInView, setIsInView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -122,10 +124,10 @@ export default function ProjectVideo({
           className="text-right mt-2"
         >
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] mb-1.5 font-medium">
-            Video
+            {t("فيديو", "Video")}
           </p>
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] font-medium">
-            Showcase
+            {t("عرض", "Showcase")}
           </p>
         </motion.div>
       </motion.div>
@@ -206,10 +208,10 @@ export default function ProjectVideo({
           className="text-left mt-2"
         >
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] mb-1.5 font-medium">
-            Project
+            {t("مشروع", "Project")}
           </p>
           <p className="text-[10px] text-[#283b4a]/60 uppercase tracking-[0.15em] font-medium">
-            Gallery
+            {t("معرض", "Gallery")}
           </p>
         </motion.div>
       </motion.div>

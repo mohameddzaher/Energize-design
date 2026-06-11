@@ -4,14 +4,18 @@ import { motion } from 'framer-motion';
 import { Check, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import { localizeService, Service } from '@/lib/services';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
-export default function ServiceContent({ service }: { service: any }) {
+export default function ServiceContent({ service: raw }: { service: Service }) {
+  const { lang, t } = useLanguage();
+  const service = localizeService(raw, lang);
   return (
     <>
       <div className="mb-6">
         <Link href="/services" className="inline-flex items-center text-[#283b4a] hover:text-[#e4ba8b] transition-colors text-sm mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Services
+          {t('العودة إلى الخدمات', 'Back to Services')}
         </Link>
       </div>
 
@@ -22,7 +26,7 @@ export default function ServiceContent({ service }: { service: any }) {
         transition={{ duration: 0.3 }}
         className="mb-8"
       >
-        <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">Service Overview</h2>
+        <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">{t('نظرة عامة على الخدمة', 'Service Overview')}</h2>
         <p className="text-sm lg:text-base text-[#283b4a]/80 leading-relaxed text-justify mb-6">
           {service.fullDescription}
         </p>
@@ -35,7 +39,7 @@ export default function ServiceContent({ service }: { service: any }) {
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.08 }}
       >
-        <h3 className="text-lg lg:text-xl font-bold text-[#283b4a] mb-4">What We Offer</h3>
+        <h3 className="text-lg lg:text-xl font-bold text-[#283b4a] mb-4">{t('ما نقدّمه', 'What We Offer')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {service.features.map((feature: string, index: number) => (
             <motion.div
@@ -55,7 +59,7 @@ export default function ServiceContent({ service }: { service: any }) {
 
       <div className="mt-8 text-center">
         <Button href="/contact" variant="primary" size="md">
-          Get a Quote
+          {t('احصل على عرض سعر', 'Get a Quote')}
         </Button>
       </div>
     </>

@@ -4,25 +4,25 @@ import Link from "next/link";
 import Image from "next/image";
 import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
-import { services } from "@/lib/services";
+import { services, localizeService } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import PageIntro from "@/components/sections/PageIntro";
 import { getGoogleDriveUrl } from "@/lib/googleDrive";
 import { Glasses, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function ServicesPage() {
-  const innovationServices = services.filter(
-    (s) => s.category === "Innovation & Technology",
-  );
-  const designServices = services.filter(
-    (s) => s.category === "Design & Creative Services",
-  );
-  const constructionServices = services.filter(
-    (s) => s.category === "Execution & Construction Services",
-  );
-  const projectManagementServices = services.filter(
-    (s) => s.category === "Project Management",
-  );
+  const { lang, t } = useLanguage();
+  const loc = (s: (typeof services)[number]) => localizeService(s, lang);
+  const innovationServices = services
+    .filter((s) => s.category === "Innovation & Technology")
+    .map(loc);
+  const designServices = services
+    .filter((s) => s.category === "Design & Creative Services")
+    .map(loc);
+  const constructionServices = services
+    .filter((s) => s.category === "Execution & Construction Services")
+    .map(loc);
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
-            Our Services
+            {t("خدماتنا", "Our Services")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -56,16 +56,21 @@ export default function ServicesPage() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
-            Comprehensive design and construction solutions tailored to your
-            needs
+            {t(
+              "حلول متكاملة في التصميم والإنشاء مصمّمة وفق احتياجاتك",
+              "Comprehensive design and construction solutions tailored to your needs",
+            )}
           </motion.p>
         </div>
       </section>
 
       {/* Page Intro Section */}
       <PageIntro
-        title="End-to-End Excellence"
-        description="From conceptual design to final execution, we orchestrate every phase of your project with precision and passion, ensuring that your vision materializes into spaces that not only meet but exceed expectations."
+        title={t("تميّز من البداية إلى النهاية", "End-to-End Excellence")}
+        description={t(
+          "من التصميم المبدئي إلى التنفيذ النهائي، ننسّق كل مرحلة من مشروعك بدقة وشغف، لنضمن تحوّل رؤيتك إلى مساحات لا تلبّي التوقعات فحسب بل تتجاوزها.",
+          "From conceptual design to final execution, we orchestrate every phase of your project with precision and passion, ensuring that your vision materializes into spaces that not only meet but exceed expectations.",
+        )}
       />
 
       {/* Innovation & Technology - Featured Virtual Tours */}
@@ -79,10 +84,10 @@ export default function ServicesPage() {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-[#283b4a] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg mb-4">
             <Glasses className="w-3.5 h-3.5" />
-            New Technology
+            {t("تقنية جديدة", "New Technology")}
           </div>
           <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a]">
-            Innovation & Technology
+            {t("الابتكار والتقنية", "Innovation & Technology")}
           </h2>
         </motion.div>
 
@@ -126,7 +131,7 @@ export default function ServicesPage() {
                   href="/vr-real-estate"
                   className="inline-flex items-center justify-center rounded-full bg-[#283b4a] px-6 py-2.5 text-xs font-medium text-white shadow-lg transition-all duration-200 hover:bg-[#1f2d38] hover:shadow-xl hover:scale-[1.02]"
                 >
-                  Explore VR Experience
+                  {t("اكتشف تجربة الواقع الافتراضي", "Explore VR Experience")}
                   <ArrowRight className="ml-2 w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -144,7 +149,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold mb-8 text-center text-white"
         >
-          Design & Creative Services
+          {t("خدمات التصميم والإبداع", "Design & Creative Services")}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {designServices.map((service, index) => (
@@ -205,7 +210,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.3 }}
           className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-8 text-center"
         >
-          Execution & Construction Services
+          {t("خدمات التنفيذ والإنشاء", "Execution & Construction Services")}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {constructionServices.map((service, index) => (

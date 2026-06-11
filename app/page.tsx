@@ -28,12 +28,7 @@ export default function Home() {
   return (
     <>
       {/* Premium Hero Banner */}
-      <RoundedHeroBanner
-        eyebrow="Crafting Tomorrow's Living Spaces"
-        titleLine1="Set New Standards"
-        titleLine2="in Modern Design"
-        titleLine3="& Construction"
-      />
+      <RoundedHeroBanner />
 
       {/* Virtual Tours Preview - New Service */}
       <VRRealEstatePreview background="light" />
@@ -42,21 +37,11 @@ export default function Home() {
       <CenterQuoteSplitImages
         leftImage={getGoogleDriveUrl("/images/projects/Offices/Offices-Makkah-05.jpg", false)}
         rightImage={getGoogleDriveUrl("/images/projects/Studio/Studio-03.jpg", false)}
-        quote="If you can dream it, we can build it."
-        body="We adapt a uniquely personalised perspective to each project to deliver stunning spaces of optimal function."
-        ctaLabel="Get in touch"
         ctaHref="/contact"
       />
 
       {/* Collage Showcase */}
       <CollageShowcase
-        heading="Comprehensive Design & Construction Solutions"
-        bullets={[
-          "Architectural & Interior Design",
-          "General Contracting & Construction",
-          "Project Management & Supervision",
-        ]}
-        ctaLabel="Explore Services"
         ctaHref="/services"
         images={[
           getGoogleDriveUrl("/images/projects/Offices/Offices-Makkah-01.jpg", false),

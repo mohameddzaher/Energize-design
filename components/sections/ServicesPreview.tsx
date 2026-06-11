@@ -8,27 +8,37 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 import { projects } from '@/lib/projects';
-
-const services = [
-  {
-    title: 'Architectural & Interior Design',
-    description: 'Creating spaces that blend functionality with aesthetic excellence.',
-    image: projects[6]?.images[0] || '/images/projects/Studio/Studio-01.jpg',
-  },
-  {
-    title: 'General Contracting & Construction',
-    description: 'Full-service construction management with precision and care.',
-    image: projects[5]?.images[0] || '/images/projects/Offices/Offices-Makkah-01.jpg',
-  },
-  {
-    title: 'Project Management',
-    description: 'End-to-end project oversight ensuring quality and timely delivery.',
-    image: projects[3]?.images[0] || '/images/projects/LANO Cafe/LANO CAFE-01.jpg',
-  },
-];
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function ServicesPreview({ background = 'white' }: { background?: 'white' | 'light' | 'dark' | 'beige' }) {
   const isDark = background === 'dark';
+  const { t } = useLanguage();
+  const services = [
+    {
+      title: t('التصميم المعماري والداخلي', 'Architectural & Interior Design'),
+      description: t(
+        'نبتكر مساحات تجمع بين الوظيفة والتميّز الجمالي.',
+        'Creating spaces that blend functionality with aesthetic excellence.',
+      ),
+      image: projects[6]?.images[0] || '/images/projects/Studio/Studio-01.jpg',
+    },
+    {
+      title: t('المقاولات العامة والإنشاء', 'General Contracting & Construction'),
+      description: t(
+        'إدارة إنشاء متكاملة بدقة وعناية فائقة.',
+        'Full-service construction management with precision and care.',
+      ),
+      image: projects[5]?.images[0] || '/images/projects/Offices/Offices-Makkah-01.jpg',
+    },
+    {
+      title: t('إدارة المشاريع', 'Project Management'),
+      description: t(
+        'إشراف شامل على المشروع يضمن الجودة والتسليم في الوقت المحدد.',
+        'End-to-end project oversight ensuring quality and timely delivery.',
+      ),
+      image: projects[3]?.images[0] || '/images/projects/LANO Cafe/LANO CAFE-01.jpg',
+    },
+  ];
   return (
     <Section background={background}>
       {/* Centered Text */}
@@ -38,15 +48,17 @@ export default function ServicesPreview({ background = 'white' }: { background?:
             isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
           }`}
         >
-          Our Services
+          {t('خدماتنا', 'Our Services')}
         </h2>
         <p
           className={`text-xs lg:text-sm leading-relaxed text-justify ${
             isDark ? 'text-white/80' : 'text-[#283b4a]/70'
           }`}
         >
-          From initial concept to final execution, we deliver comprehensive design and construction solutions 
-          that exceed expectations and create lasting value.
+          {t(
+            'من الفكرة الأولى وحتى التنفيذ النهائي، نقدّم حلولًا متكاملة في التصميم والإنشاء تتجاوز التوقعات وتصنع قيمة دائمة.',
+            'From initial concept to final execution, we deliver comprehensive design and construction solutions that exceed expectations and create lasting value.',
+          )}
         </p>
       </div>
 
@@ -100,7 +112,7 @@ export default function ServicesPreview({ background = 'white' }: { background?:
 
       <div className="text-center mt-8">
         <Button href="/services" variant={isDark ? 'outline-light' : 'primary'} size="md">
-          Explore All Services
+          {t('استكشف كل الخدمات', 'Explore All Services')}
         </Button>
       </div>
     </Section>

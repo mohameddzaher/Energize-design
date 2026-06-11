@@ -1,35 +1,48 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Section from '../ui/Section';
 import { Award, Users, Clock, CheckCircle } from 'lucide-react';
-
-const features = [
-  {
-    icon: Award,
-    title: 'Award-Winning Design',
-    description: 'Recognized excellence in architectural and interior design with a portfolio of distinguished projects.',
-  },
-  {
-    icon: Users,
-    title: 'Expert Team',
-    description: 'A dedicated team of architects, designers, and craftsmen committed to delivering exceptional results.',
-  },
-  {
-    icon: Clock,
-    title: 'Timely Delivery',
-    description: 'We respect deadlines and deliver projects on time without compromising quality or attention to detail.',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Quality Guaranteed',
-    description: 'Every project is executed with precision, using premium materials and proven construction methods.',
-  },
-];
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function WhyChooseUs({ background = 'dark' }: { background?: 'white' | 'light' | 'dark' | 'beige' }) {
   const isDark = background === 'dark';
-  
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Award,
+      title: t('تصميم حائز على جوائز', 'Award-Winning Design'),
+      description: t(
+        'تميّز معترف به في التصميم المعماري والداخلي مع سجلّ من المشاريع المتميزة.',
+        'Recognized excellence in architectural and interior design with a portfolio of distinguished projects.',
+      ),
+    },
+    {
+      icon: Users,
+      title: t('فريق خبير', 'Expert Team'),
+      description: t(
+        'فريق متخصص من المعماريين والمصممين والحِرفيين ملتزم بتقديم نتائج استثنائية.',
+        'A dedicated team of architects, designers, and craftsmen committed to delivering exceptional results.',
+      ),
+    },
+    {
+      icon: Clock,
+      title: t('تسليم في الموعد', 'Timely Delivery'),
+      description: t(
+        'نحترم المواعيد ونسلّم المشاريع في وقتها دون المساس بالجودة أو دقّة التفاصيل.',
+        'We respect deadlines and deliver projects on time without compromising quality or attention to detail.',
+      ),
+    },
+    {
+      icon: CheckCircle,
+      title: t('جودة مضمونة', 'Quality Guaranteed'),
+      description: t(
+        'يُنفَّذ كل مشروع بدقة باستخدام خامات فاخرة وأساليب إنشاء مُجرّبة.',
+        'Every project is executed with precision, using premium materials and proven construction methods.',
+      ),
+    },
+  ];
+
   return (
     <Section background={background}>
       <h2
@@ -37,7 +50,7 @@ export default function WhyChooseUs({ background = 'dark' }: { background?: 'whi
           isDark ? 'text-white' : 'text-[#283b4a]'
         }`}
       >
-        Why Choose Us
+        {t('لماذا تختارنا', 'Why Choose Us')}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

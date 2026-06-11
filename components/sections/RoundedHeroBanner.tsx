@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Glasses } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const HeroBackgroundScene = dynamic(
   () => import("@/components/three/HeroBackgroundScene"),
@@ -12,17 +13,12 @@ const HeroBackgroundScene = dynamic(
   },
 );
 
-export default function RoundedHeroBanner({
-  eyebrow = "Crafting Tomorrow's Living Spaces",
-  titleLine1 = "Set New Standards",
-  titleLine2 = "in Modern Design",
-  titleLine3 = "& Construction",
-}: {
-  eyebrow?: string;
-  titleLine1?: string;
-  titleLine2?: string;
-  titleLine3?: string;
-}) {
+export default function RoundedHeroBanner() {
+  const { t } = useLanguage();
+  const eyebrow = t("نصمّم مساحات الغد", "Crafting Tomorrow's Living Spaces");
+  const titleLine1 = t("نضع معايير جديدة", "Set New Standards");
+  const titleLine2 = t("في التصميم الحديث", "in Modern Design");
+  const titleLine3 = t("والإنشاء", "& Construction");
   return (
     <section className="relative w-full">
       <div className="relative w-full overflow-hidden rounded-b-[28px] sm:rounded-b-[32px] min-h-[780px] sm:min-h-[680px] lg:min-h-[720px] xl:min-h-[760px]">
@@ -50,7 +46,7 @@ export default function RoundedHeroBanner({
           <div className="flex-1 flex flex-col justify-center max-w-[680px]">
             {/* Badge */}
             <div className="mb-3 sm:mb-4 inline-flex w-fit rounded-full bg-[#e4ba8b] px-3.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-[#283b4a] shadow-lg">
-              290+ Projects Delivered
+              {t("أكثر من 290 مشروعًا مُنجزًا", "290+ Projects Delivered")}
             </div>
 
             {/* Eyebrow */}
@@ -69,10 +65,10 @@ export default function RoundedHeroBanner({
 
             {/* Description */}
             <p className="text-xs sm:text-sm lg:text-base text-white/80 leading-relaxed mb-5 sm:mb-6 max-w-[540px]">
-              We transform architectural concepts into living experiences, where
-              every detail is intentional, every material tells a story, and
-              every space becomes a testament to refined craftsmanship and
-              timeless elegance.
+              {t(
+                "نحوّل المفاهيم المعمارية إلى تجارب حيّة، حيث يكون لكل تفصيلة هدف، ولكل خامة حكاية، وتغدو كل مساحة شاهدًا على حِرفية راقية وأناقة لا تعرف الزمن.",
+                "We transform architectural concepts into living experiences, where every detail is intentional, every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance.",
+              )}
             </p>
 
             {/* Buttons */}
@@ -81,13 +77,13 @@ export default function RoundedHeroBanner({
                 href="/projects"
                 className="inline-flex items-center justify-center rounded-full bg-[#e4ba8b] px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-medium text-[#283b4a] shadow-lg transition-all duration-200 hover:bg-[#d4a97a] hover:shadow-xl hover:scale-[1.02]"
               >
-                View Projects
+                {t("استعرض الأعمال", "View Projects")}
               </a>
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-white/10 hover:border-white/60"
               >
-                Get In Touch
+                {t("تواصل معنا", "Get In Touch")}
               </a>
             </div>
 
@@ -101,14 +97,17 @@ export default function RoundedHeroBanner({
               </div>
               <div className="min-w-0">
                 <p className="text-[10px] sm:text-xs font-semibold text-white/90 mb-0.5">
-                  Virtual Tours in VR
+                  {t("جولات افتراضية بنظارات VR", "Virtual Tours in VR")}
                 </p>
                 <p className="text-[9px] sm:text-[10px] text-white/50 leading-relaxed line-clamp-2">
-                  Walk through your design before execution and preview materials & colors in real-time.
+                  {t(
+                    "تجوّل في تصميمك قبل التنفيذ وعايِن الخامات والألوان لحظيًّا.",
+                    "Walk through your design before execution and preview materials & colors in real-time.",
+                  )}
                 </p>
               </div>
               <span className="flex-shrink-0 text-[9px] text-[#e4ba8b]/70 group-hover:text-[#e4ba8b] transition-colors mt-1 whitespace-nowrap">
-                Learn More →
+                {t("اعرف المزيد ←", "Learn More →")}
               </span>
             </Link>
 
@@ -116,15 +115,15 @@ export default function RoundedHeroBanner({
             <div className="grid grid-cols-3 gap-3 mt-6 lg:hidden">
               <div className="text-center rounded-xl bg-white/[0.04] border border-white/[0.06] py-3">
                 <div className="text-xl sm:text-2xl font-playfair font-bold text-[#e4ba8b]">290+</div>
-                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">Projects</div>
+                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">{t("مشروع", "Projects")}</div>
               </div>
               <div className="text-center rounded-xl bg-white/[0.04] border border-white/[0.06] py-3">
                 <div className="text-xl sm:text-2xl font-playfair font-bold text-[#e4ba8b]">8+</div>
-                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">Years</div>
+                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">{t("سنوات", "Years")}</div>
               </div>
               <div className="text-center rounded-xl bg-white/[0.04] border border-white/[0.06] py-3">
                 <div className="text-xl sm:text-2xl font-playfair font-bold text-[#e4ba8b]">100%</div>
-                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">Satisfaction</div>
+                <div className="text-[8px] sm:text-[9px] text-white/50 uppercase tracking-wider mt-0.5">{t("رضا العملاء", "Satisfaction")}</div>
               </div>
             </div>
           </div>
@@ -134,15 +133,15 @@ export default function RoundedHeroBanner({
             {/* Stat cards */}
             <div className="w-full rounded-2xl bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] p-5 text-right">
               <div className="text-4xl xl:text-5xl font-playfair font-bold text-white/15 leading-none">290+</div>
-              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">Projects Delivered</div>
+              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">{t("مشروع مُنجز", "Projects Delivered")}</div>
             </div>
             <div className="w-full rounded-2xl bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] p-5 text-right">
               <div className="text-4xl xl:text-5xl font-playfair font-bold text-white/15 leading-none">8+</div>
-              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">Years Experience</div>
+              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">{t("سنوات خبرة", "Years Experience")}</div>
             </div>
             <div className="w-full rounded-2xl bg-white/[0.05] backdrop-blur-sm border border-white/[0.08] p-5 text-right">
               <div className="text-4xl xl:text-5xl font-playfair font-bold text-white/15 leading-none">100%</div>
-              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">Client Satisfaction</div>
+              <div className="text-[10px] text-white/40 uppercase tracking-wider mt-1.5">{t("رضا العملاء", "Client Satisfaction")}</div>
             </div>
 
             {/* Decorative elements */}

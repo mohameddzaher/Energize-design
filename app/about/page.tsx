@@ -5,8 +5,10 @@ import Section from "@/components/ui/Section";
 import { motion } from "framer-motion";
 import PageIntro from "@/components/sections/PageIntro";
 import { getGoogleDriveUrl } from "@/lib/googleDrive";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
   return (
     <>
       {/* Hero Section */}
@@ -31,7 +33,7 @@ export default function AboutPage() {
             transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
-            About Energize Design
+            {t("عن Energize Design", "About Energize Design")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -39,15 +41,21 @@ export default function AboutPage() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs lg:text-sm text-white/90 max-w-2xl mx-auto"
           >
-            Crafting timeless spaces through innovation and excellence
+            {t(
+              "نصنع مساحات خالدة عبر الابتكار والتميّز",
+              "Crafting timeless spaces through innovation and excellence",
+            )}
           </motion.p>
         </div>
       </section>
 
       {/* Page Intro Section */}
       <PageIntro
-        title="Where Vision Meets Reality"
-        description="We transform architectural concepts into living experiences, where every detail is intentional, every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance."
+        title={t("حيث تلتقي الرؤية بالواقع", "Where Vision Meets Reality")}
+        description={t(
+          "نحوّل المفاهيم المعمارية إلى تجارب حيّة، حيث يكون لكل تفصيلة هدف، ولكل خامة حكاية، وتغدو كل مساحة شاهدًا على حِرفية راقية وأناقة لا تعرف الزمن.",
+          "We transform architectural concepts into living experiences, where every detail is intentional, every material tells a story, and every space becomes a testament to refined craftsmanship and timeless elegance.",
+        )}
       />
 
       {/* Who We Are Section */}
@@ -61,7 +69,7 @@ export default function AboutPage() {
             className="mb-8"
           >
             <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
-              Who We Are
+              {t("من نحن", "Who We Are")}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <motion.div
@@ -72,15 +80,10 @@ export default function AboutPage() {
                 className="order-2 lg:order-1"
               >
                 <p className="text-sm lg:text-base text-white/80 leading-relaxed text-justify">
-                  Energize Design is a luxury architecture and decoration studio
-                  that redefines spaces with power and elegance. Rooted in
-                  visionary design principles, Energize fuses the precision of
-                  modern construction with the sophistication of timeless
-                  aesthetics. We believe true design goes beyond aesthetics — it
-                  tells a story, creates emotional impact, and delivers
-                  measurable results. Through passion for detail and continuous
-                  innovation, we transform ideas into real-world experiences
-                  that make a difference.
+                  {t(
+                    "إنرجايز ديزاين استوديو فاخر للعمارة والديكور يعيد تعريف المساحات بقوة وأناقة. انطلاقًا من مبادئ تصميمية ذات رؤية، يدمج إنرجايز دقّة الإنشاء الحديث مع رُقيّ الجماليات الخالدة. نؤمن بأن التصميم الحقيقي يتجاوز الجماليات — فهو يروي حكاية، ويُحدث أثرًا عاطفيًا، ويقدّم نتائج ملموسة. وعبر شغفنا بالتفاصيل والابتكار المستمر، نحوّل الأفكار إلى تجارب واقعية تُحدث فرقًا.",
+                    "Energize Design is a luxury architecture and decoration studio that redefines spaces with power and elegance. Rooted in visionary design principles, Energize fuses the precision of modern construction with the sophistication of timeless aesthetics. We believe true design goes beyond aesthetics — it tells a story, creates emotional impact, and delivers measurable results. Through passion for detail and continuous innovation, we transform ideas into real-world experiences that make a difference.",
+                  )}
                 </p>
               </motion.div>
               <motion.div
@@ -133,12 +136,13 @@ export default function AboutPage() {
               transition={{ duration: 0.35 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mb-4">
-                Our Vision
+                {t("رؤيتنا", "Our Vision")}
               </h2>
               <p className="text-sm lg:text-base text-[#283b4a]/80 leading-relaxed text-justify">
-                Raising design and execution standards by merging refined
-                craftsmanship with modern innovation to ensure trust,
-                distinction, and long-term value in every project.
+                {t(
+                  "رفع معايير التصميم والتنفيذ بدمج الحِرفية الراقية مع الابتكار الحديث لضمان الثقة والتميّز والقيمة المستدامة في كل مشروع.",
+                  "Raising design and execution standards by merging refined craftsmanship with modern innovation to ensure trust, distinction, and long-term value in every project.",
+                )}
               </p>
             </motion.div>
           </div>
@@ -156,12 +160,13 @@ export default function AboutPage() {
               transition={{ duration: 0.35 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-[#e4ba8b] mb-4">
-                Our Mission
+                {t("رسالتنا", "Our Mission")}
               </h2>
               <p className="text-sm lg:text-base text-white/80 leading-relaxed text-justify">
-                To become leaders in delivering refined, timeless interior
-                designs that redefine quality and creativity across the
-                industry.
+                {t(
+                  "أن نصبح روّادًا في تقديم تصاميم داخلية راقية وخالدة تُعيد تعريف الجودة والإبداع في القطاع.",
+                  "To become leaders in delivering refined, timeless interior designs that redefine quality and creativity across the industry.",
+                )}
               </p>
             </motion.div>
             <motion.div
@@ -195,7 +200,7 @@ export default function AboutPage() {
             transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-center text-[#283b4a] mb-8"
           >
-            Leadership
+            {t("القيادة", "Leadership")}
           </motion.h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -223,26 +228,24 @@ export default function AboutPage() {
             >
               <div className="mb-4">
                 <span className="text-xs lg:text-sm text-[#e4ba8b] font-semibold">
-                  Chief Executive Officer
+                  {t("الرئيس التنفيذي", "Chief Executive Officer")}
                 </span>
                 <h2 className="text-xl lg:text-2xl font-bold text-[#283b4a] mt-2">
-                  Aliaa ElSalhy
+                  {t("علياء الصالحي", "Aliaa ElSalhy")}
                 </h2>
               </div>
               <div className="space-y-3 text-[#283b4a]/80 leading-relaxed">
                 <p className="text-xs lg:text-sm text-justify">
-                  As the CEO of Energize Design, Aliaa ElSalhy brings visionary
-                  leadership and extensive expertise in interior design and
-                  construction management. With a passion for excellence and
-                  innovation, Aliaa has been instrumental in establishing
-                  Energize Design as a leader in the industry.
+                  {t(
+                    "بصفتها الرئيس التنفيذي لإنرجايز ديزاين، تجلب علياء الصالحي قيادة ذات رؤية وخبرة واسعة في التصميم الداخلي وإدارة الإنشاء. وبشغفها بالتميّز والابتكار، كان لعلياء دور محوري في ترسيخ إنرجايز ديزاين كشركة رائدة في القطاع.",
+                    "As the CEO of Energize Design, Aliaa ElSalhy brings visionary leadership and extensive expertise in interior design and construction management. With a passion for excellence and innovation, Aliaa has been instrumental in establishing Energize Design as a leader in the industry.",
+                  )}
                 </p>
                 <p className="text-xs lg:text-sm text-justify">
-                  Under her guidance, the company has consistently delivered
-                  projects that exceed client expectations, combining refined
-                  craftsmanship with modern innovation. Aliaa&apos;s commitment
-                  to quality and her strategic approach to design and execution
-                  have shaped the company&apos;s reputation for excellence.
+                  {t(
+                    "وتحت إشرافها، قدّمت الشركة باستمرار مشاريع تفوق توقعات العملاء، جامعةً بين الحِرفية الراقية والابتكار الحديث. وقد شكّل التزام علياء بالجودة ونهجها الاستراتيجي في التصميم والتنفيذ سمعة الشركة في التميّز.",
+                    "Under her guidance, the company has consistently delivered projects that exceed client expectations, combining refined craftsmanship with modern innovation. Aliaa's commitment to quality and her strategic approach to design and execution have shaped the company's reputation for excellence.",
+                  )}
                 </p>
               </div>
             </motion.div>

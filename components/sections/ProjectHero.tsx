@@ -2,10 +2,12 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { localizeProject, Project } from '@/lib/projects';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
-export default function ProjectHero({ project }: { project: any }) {
+export default function ProjectHero({ project: raw }: { project: Project }) {
+  const { lang } = useLanguage();
+  const project = localizeProject(raw, lang);
   return (
     <section className="relative h-40 lg:h-48 flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">

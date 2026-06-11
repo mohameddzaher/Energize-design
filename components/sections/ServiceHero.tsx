@@ -1,10 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { localizeService, Service } from '@/lib/services';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
-export default function ServiceHero({ service }: { service: any }) {
+export default function ServiceHero({ service: raw }: { service: Service }) {
+  const { lang } = useLanguage();
+  const service = localizeService(raw, lang);
   return (
     <section className="relative h-40 lg:h-48 flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#283b4a] to-[#1a2632]" />

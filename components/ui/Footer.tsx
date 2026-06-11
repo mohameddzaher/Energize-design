@@ -5,21 +5,24 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaLinkedin, FaInstagram, FaSnapchat, FaXTwitter, FaTiktok, FaYoutube } from 'react-icons/fa6';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Services', href: '/services' },
-      { name: 'Projects', href: '/projects' },
+      { name: t('من نحن', 'About Us'), href: '/about' },
+      { name: t('خدماتنا', 'Services'), href: '/services' },
+      { name: t('أعمالنا', 'Projects'), href: '/projects' },
+      { name: t('المدوّنة', 'Blog'), href: '/blog' },
     ],
     innovation: [
-      { name: 'Virtual Tours', href: '/vr-real-estate' },
+      { name: t('الجولات الافتراضية', 'Virtual Tours'), href: '/vr-real-estate' },
     ],
     resources: [
-      { name: 'Contact', href: '/contact' },
+      { name: t('تواصل معنا', 'Contact'), href: '/contact' },
       { name: 'Linktree', href: 'https://linktr.ee/Energize_Design', external: true },
     ],
   };
@@ -45,15 +48,16 @@ export default function Footer() {
       <div className="container mx-auto px-4 lg:px-6 xl:px-8 max-w-7xl w-full pt-12 lg:pt-12 pb-6 lg:pb-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
           {/* Brand Section */}
-          <div className="lg:col-span-2 text-center md:text-left">
+          <div className="lg:col-span-2 text-center md:text-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
+              className="flex flex-col items-center md:items-start"
             >
               <Link href="/" className="inline-block mb-4">
-                <div className="relative h-14 w-48 lg:h-16 lg:w-56 mx-auto md:mx-0">
+                <div className="relative h-14 w-48 lg:h-16 lg:w-56">
                   <Image
                     src="/images/logo.png"
                     alt="Energize Design Logo"
@@ -63,19 +67,22 @@ export default function Footer() {
                   />
                 </div>
               </Link>
-              <p className="text-[#fff9f2]/70 text-xs lg:text-sm leading-relaxed mb-6 max-w-md mx-auto md:mx-0">
-                Raising design and execution standards by merging refined craftsmanship with modern innovation to ensure trust, distinction, and long-term value.
+              <p className="text-[#fff9f2]/70 text-xs lg:text-sm leading-relaxed mb-6 max-w-md text-center md:text-start">
+                {t(
+                  'نرفع معايير التصميم والتنفيذ بدمج الحِرفية الراقية مع الابتكار الحديث لنضمن الثقة والتميّز والقيمة المستدامة.',
+                  'Raising design and execution standards by merging refined craftsmanship with modern innovation to ensure trust, distinction, and long-term value.',
+                )}
               </p>
-              <div className="mb-4 flex justify-center md:justify-start">
+              <div className="mb-4 flex">
                 <a
                   href="mailto:info@energize-designs.com"
-                  className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors text-xs lg:text-sm flex items-center space-x-2 mb-3"
+                  className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors text-xs lg:text-sm flex items-center gap-2 mb-3"
                 >
                   <Mail className="w-4 h-4" />
                   <span>info@energize-designs.com</span>
                 </a>
               </div>
-              <div className="flex space-x-3 justify-center md:justify-start">
+              <div className="flex gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
@@ -96,7 +103,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-start">
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +111,7 @@ export default function Footer() {
               transition={{ duration: 0.3, delay: 0.1 }}
               className="font-bold mb-5 text-white text-sm uppercase tracking-wider"
             >
-              Company
+              {t('الشركة', 'Company')}
             </motion.h4>
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
@@ -119,7 +126,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] me-0 group-hover:me-2 transition-all duration-300"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -128,7 +135,7 @@ export default function Footer() {
           </div>
 
           {/* Innovation Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-start">
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +143,7 @@ export default function Footer() {
               transition={{ duration: 0.3, delay: 0.1 }}
               className="font-bold mb-5 text-white text-sm uppercase tracking-wider"
             >
-              Innovation
+              {t('الابتكار', 'Innovation')}
             </motion.h4>
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
@@ -151,7 +158,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] me-0 group-hover:me-2 transition-all duration-300"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -165,7 +172,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                     >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] me-0 group-hover:me-2 transition-all duration-300"></span>
                       {link.name}
                     </a>
                   ) : (
@@ -173,7 +180,7 @@ export default function Footer() {
                       href={link.href}
                       className="text-[#fff9f2]/70 hover:text-[#e4ba8b] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                     >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#e4ba8b] me-0 group-hover:me-2 transition-all duration-300"></span>
                       {link.name}
                     </Link>
                   )}
@@ -192,10 +199,10 @@ export default function Footer() {
           className="border-t border-[#fff9f2]/10 pt-6 mt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#fff9f2]/50 space-y-2 md:space-y-0">
-            <p>&copy; {currentYear} Energize Design. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="/about" className="hover:text-[#e4ba8b] transition-colors">Privacy Policy</a>
-              <a href="/contact" className="hover:text-[#e4ba8b] transition-colors">Terms of Service</a>
+            <p>&copy; {currentYear} Energize Design. {t('جميع الحقوق محفوظة.', 'All rights reserved.')}</p>
+            <div className="flex gap-6">
+              <a href="/about" className="hover:text-[#e4ba8b] transition-colors">{t('سياسة الخصوصية', 'Privacy Policy')}</a>
+              <a href="/contact" className="hover:text-[#e4ba8b] transition-colors">{t('شروط الخدمة', 'Terms of Service')}</a>
             </div>
           </div>
         </motion.div>

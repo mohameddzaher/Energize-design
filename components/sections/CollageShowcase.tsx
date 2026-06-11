@@ -2,26 +2,28 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 interface CollageShowcaseProps {
-  heading: string;
-  bullets: string[];
-  ctaLabel: string;
-  ctaHref: string;
+  ctaHref?: string;
   images: string[];
 }
 
 export default function CollageShowcase({
-  heading = 'Comprehensive Design & Construction Solutions',
-  bullets = [
-    'Architectural & Interior Design',
-    'General Contracting & Construction',
-    'Project Management & Supervision',
-  ],
-  ctaLabel = 'Explore Services',
   ctaHref = '/services',
   images = [],
 }: CollageShowcaseProps) {
+  const { t } = useLanguage();
+  const heading = t(
+    'حلول متكاملة في التصميم والإنشاء',
+    'Comprehensive Design & Construction Solutions',
+  );
+  const bullets = [
+    t('التصميم المعماري والداخلي', 'Architectural & Interior Design'),
+    t('المقاولات العامة والإنشاء', 'General Contracting & Construction'),
+    t('إدارة المشاريع والإشراف', 'Project Management & Supervision'),
+  ];
+  const ctaLabel = t('استكشف الخدمات', 'Explore Services');
   return (
     <section className="bg-[#fff9f2] py-8 lg:py-12">
       <div className="mx-auto max-w-6xl 2xl:max-w-7xl px-4 sm:px-6 lg:px-8">

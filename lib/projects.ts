@@ -3,11 +3,37 @@ import { getGoogleDriveUrl } from './googleDrive';
 export interface Project {
   id: string;
   name: string;
+  nameAr?: string;
   slug: string;
   category: string;
+  categoryAr?: string;
   description: string;
+  descriptionAr?: string;
   images: string[];
   video?: string;
+}
+
+export type Lang = "ar" | "en";
+
+const CATEGORY_AR: Record<string, string> = {
+  Residential: "سكني",
+  Commercial: "تجاري",
+  Hospitality: "ضيافة",
+};
+
+export function categoryLabel(category: string, lang: Lang): string {
+  return lang === "ar" ? CATEGORY_AR[category] ?? category : category;
+}
+
+/** Return a copy of the project with text fields in the requested language. */
+export function localizeProject(p: Project, lang: Lang): Project {
+  if (lang !== "ar") return p;
+  return {
+    ...p,
+    name: p.nameAr ?? p.name,
+    category: p.categoryAr ?? CATEGORY_AR[p.category] ?? p.category,
+    description: p.descriptionAr ?? p.description,
+  };
 }
 
 // Helper function to convert local paths to Google Drive URLs
@@ -23,10 +49,13 @@ export const projects: Project[] = [
   {
     id: "1",
     name: "Boys Bedroom",
+    nameAr: "غرفة نوم أولاد",
     slug: "boys-bedroom",
     category: "Residential",
     description:
       "A professionally designed boys' bedroom that balances elegance and functionality, with smart space planning and warm details for a calm living experience.",
+    descriptionAr:
+      "غرفة نوم أولاد بتصميم احترافي يوازن بين الأناقة والوظيفة، مع تخطيط ذكي للمساحة ولمسات دافئة لتجربة معيشة هادئة.",
     images: [
       getImageUrl("/images/projects/Boys Bedroom/BBR-03.jpg"),
       getImageUrl("/images/projects/Boys Bedroom/BBR-01.jpg"),
@@ -40,10 +69,13 @@ export const projects: Project[] = [
   {
     id: "2",
     name: "Girls Bedroom",
+    nameAr: "غرفة نوم بنات",
     slug: "girls-bedroom",
     category: "Residential",
     description:
       "A modern and elegant girls' bedroom design that combines comfort, functionality, and style.",
+    descriptionAr:
+      "تصميم عصري وأنيق لغرفة نوم بنات يجمع بين الراحة والوظيفة والذوق الرفيع.",
     images: [
       getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-01.jpg"),
       getImageUrl("/images/projects/Girls Bedroom/Girls Bedroom-02.jpg"),
@@ -55,10 +87,13 @@ export const projects: Project[] = [
   {
     id: "3",
     name: "Jewelry Store",
+    nameAr: "متجر مجوهرات",
     slug: "jewelry-store",
     category: "Commercial",
     description:
       "Design and renovation of a diamond store in Jeddah with a modern luxury style that highlights the brilliance of diamonds and offers customers a unique experience.",
+    descriptionAr:
+      "تصميم وتجديد متجر ألماس في جدة بطابع فاخر وعصري يُبرز بريق الألماس ويمنح العملاء تجربة فريدة.",
     images: [
       getImageUrl("/images/projects/Jewelry Store/Jewelry Store-08.jpg"),
       getImageUrl("/images/projects/Jewelry Store/Jewelry Store-02.jpg"),
@@ -76,10 +111,13 @@ export const projects: Project[] = [
   {
     id: "4",
     name: "LANO Cafe",
+    nameAr: "مقهى لانو",
     slug: "lano-cafe",
     category: "Hospitality",
     description:
       "A modern cafe design that creates a welcoming atmosphere for customers.",
+    descriptionAr:
+      "تصميم عصري لمقهى يخلق أجواءً ترحيبية ودافئة للعملاء.",
     images: [
       getImageUrl("/images/projects/LANO Cafe/LANO CAFE-09.jpg"),
       getImageUrl("/images/projects/LANO Cafe/LANO CAFE-02.jpg"),
@@ -95,10 +133,13 @@ export const projects: Project[] = [
   {
     id: "5",
     name: "Master Bedroom",
+    nameAr: "غرفة النوم الرئيسية",
     slug: "master-bedroom",
     category: "Residential",
     description:
       "A luxurious master bedroom design that combines elegance and comfort.",
+    descriptionAr:
+      "تصميم فاخر لغرفة النوم الرئيسية يجمع بين الأناقة والراحة.",
     images: [
       getImageUrl("/images/projects/Master Bedroom/Bedroom-01.jpg"),
       getImageUrl("/images/projects/Master Bedroom/Bedroom-02.jpg"),
@@ -112,10 +153,13 @@ export const projects: Project[] = [
   {
     id: "6",
     name: "Offices",
+    nameAr: "مكاتب",
     slug: "offices",
     category: "Commercial",
     description:
       "Professional office space design in Makkah that enhances productivity and creates a modern work environment.",
+    descriptionAr:
+      "تصميم احترافي لمساحات مكتبية في مكة يعزّز الإنتاجية ويخلق بيئة عمل عصرية.",
     images: [
       getImageUrl("/images/projects/Offices/Offices-Makkah-01.jpg"),
       getImageUrl("/images/projects/Offices/Offices-Makkah-02.jpg"),
@@ -131,10 +175,13 @@ export const projects: Project[] = [
   {
     id: "7",
     name: "Studio",
+    nameAr: "ستوديو",
     slug: "studio",
     category: "Residential",
     description:
       "A modern studio design that balances elegance and functionality, with smart space planning and warm details for a calm living experience.",
+    descriptionAr:
+      "تصميم عصري لستوديو يوازن بين الأناقة والوظيفة، مع تخطيط ذكي للمساحة ولمسات دافئة لتجربة معيشة هادئة.",
     images: [
       getImageUrl("/images/projects/Studio/Studio-01.jpg"),
       getImageUrl("/images/projects/Studio/Studio-02.jpg"),

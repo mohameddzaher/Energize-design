@@ -5,14 +5,17 @@ import Image from 'next/image';
 import Section from '../ui/Section';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import { projects } from '@/lib/projects';
+import { projects, localizeProject } from '@/lib/projects';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import 'swiper/css';
 
 export default function Gallery({ background = 'beige' }: { background?: 'white' | 'light' | 'dark' | 'beige' }) {
+  const { lang, t } = useLanguage();
   // Get random images from all projects
-  const allImages = projects.flatMap((project) => 
-    project.images.slice(0, 2).map((img) => ({ src: img, project: project.name }))
-  );
+  const allImages = projects.flatMap((project) => {
+    const lp = localizeProject(project, lang);
+    return lp.images.slice(0, 2).map((img) => ({ src: img, project: lp.name }));
+  });
   const galleryImages = allImages.slice(0, 12);
   const isDark = background === 'dark';
 
@@ -28,12 +31,12 @@ export default function Gallery({ background = 'beige' }: { background?: 'white'
                <h2 className={`text-2xl lg:text-3xl font-playfair mb-3 ${
                  isDark ? 'text-[#e4ba8b]' : 'text-[#283b4a]'
                }`}>
-          Our Gallery
+          {t('معرض أعمالنا', 'Our Gallery')}
         </h2>
         <p className={`text-xs lg:text-sm ${
           isDark ? 'text-white/80' : 'text-[#283b4a]/70'
         }`}>
-          A glimpse into our world of design excellence
+          {t('لمحة من عالمنا في تميّز التصميم', 'A glimpse into our world of design excellence')}
         </p>
       </motion.div>
       <Swiper
@@ -57,7 +60,7 @@ export default function Gallery({ background = 'beige' }: { background?: 'white'
             >
               <Image
                 src={item.src}
-                alt={`Gallery from ${item.project}`}
+                alt={t(`من ${item.project}`, `Gallery from ${item.project}`)}
                 fill
                 className="object-cover rounded-xl group-hover:scale-110 transition-transform duration-300 "
               />

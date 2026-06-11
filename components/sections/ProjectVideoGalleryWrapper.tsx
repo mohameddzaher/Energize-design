@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 const ProjectVideo = dynamic(
   () => import('@/components/sections/ProjectVideo'),
@@ -28,6 +29,7 @@ export default function ProjectVideoGalleryWrapper({
   images,
   projectName,
 }: ProjectVideoGalleryWrapperProps) {
+  const { t } = useLanguage();
   return (
     <>
       {/* Video Section - Before Gallery */}
@@ -40,7 +42,7 @@ export default function ProjectVideoGalleryWrapper({
       {/* Gallery Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-xl lg:text-2xl font-bold text-center text-[#283b4a] mb-6">
-          Project Gallery
+          {t('معرض المشروع', 'Project Gallery')}
         </h2>
         <ProjectVideoGallery images={images} projectName={projectName} />
       </div>

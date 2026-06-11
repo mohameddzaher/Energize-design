@@ -8,6 +8,7 @@ import Button from "@/components/ui/Button";
 import MapSection from "@/components/sections/MapSection";
 import PageIntro from "@/components/sections/PageIntro";
 import { getGoogleDriveUrl } from "@/lib/googleDrive";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 import {
   FaLinkedin,
   FaInstagram,
@@ -18,6 +19,7 @@ import {
 } from "react-icons/fa6";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,7 +67,7 @@ export default function ContactPage() {
             transition={{ duration: 0.3 }}
             className="text-xl lg:text-2xl font-bold text-white mb-2"
           >
-            Get In Touch
+            {t("تواصل معنا", "Get In Touch")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -73,15 +75,21 @@ export default function ContactPage() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="text-xs text-white/90 max-w-2xl mx-auto"
           >
-            Let&apos;s discuss how we can bring your vision to life
+            {t(
+              "لنتحدّث عن كيفية تحويل رؤيتك إلى واقع",
+              "Let's discuss how we can bring your vision to life",
+            )}
           </motion.p>
         </div>
       </section>
 
       {/* Page Intro Section */}
       <PageIntro
-        title="Let's Start the Conversation"
-        description="Every exceptional space begins with a dialogue—share your vision, and together we'll craft an environment that reflects your identity while elevating your daily experience through thoughtful design and impeccable execution."
+        title={t("لنبدأ الحوار", "Let's Start the Conversation")}
+        description={t(
+          "كل مساحة استثنائية تبدأ بحوار — شاركنا رؤيتك، ومعًا نصنع بيئة تعكس هويتك وترتقي بتجربتك اليومية عبر تصميم مدروس وتنفيذ لا تشوبه شائبة.",
+          "Every exceptional space begins with a dialogue—share your vision, and together we'll craft an environment that reflects your identity while elevating your daily experience through thoughtful design and impeccable execution.",
+        )}
       />
 
       {/* Contact Form Section */}
@@ -96,12 +104,12 @@ export default function ContactPage() {
               transition={{ duration: 0.3 }}
             >
               <h2 className="text-xl lg:text-2xl font-bold text-white mb-6">
-                Contact Information
+                {t("معلومات التواصل", "Contact Information")}
               </h2>
               <div className="space-y-4">
                 <div>
                   <h3 className="text-sm lg:text-base font-semibold text-white mb-1">
-                    Email
+                    {t("البريد الإلكتروني", "Email")}
                   </h3>
                   <a
                     href="mailto:info@energize-designs.com"
@@ -112,7 +120,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm lg:text-base font-semibold text-white mb-1">
-                    Phone
+                    {t("الهاتف", "Phone")}
                   </h3>
                   <a
                     href="tel:+966532032973"
@@ -123,7 +131,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm lg:text-base font-semibold text-white mb-3">
-                    Follow Us
+                    {t("تابعنا", "Follow Us")}
                   </h3>
                   <div className="space-y-3">
                     <a
@@ -222,7 +230,7 @@ export default function ContactPage() {
                   htmlFor="name"
                   className="block text-xs font-medium text-white mb-1"
                 >
-                  Name
+                  {t("الاسم", "Name")}
                 </label>
                 <input
                   type="text"
@@ -232,7 +240,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 text-sm bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:border-[#e4ba8b] transition-colors text-white placeholder-white/50"
-                  placeholder="Your name"
+                  placeholder={t("اسمك", "Your name")}
                 />
               </div>
               <div>
@@ -240,7 +248,7 @@ export default function ContactPage() {
                   htmlFor="email"
                   className="block text-xs font-medium text-white mb-1"
                 >
-                  Email
+                  {t("البريد الإلكتروني", "Email")}
                 </label>
                 <input
                   type="email"
@@ -258,7 +266,7 @@ export default function ContactPage() {
                   htmlFor="phone"
                   className="block text-xs font-medium text-white mb-1"
                 >
-                  Phone
+                  {t("الهاتف", "Phone")}
                 </label>
                 <input
                   type="tel"
@@ -275,7 +283,7 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="block text-xs font-medium text-white mb-1"
                 >
-                  Message
+                  {t("الرسالة", "Message")}
                 </label>
                 <textarea
                   id="message"
@@ -285,7 +293,7 @@ export default function ContactPage() {
                   required
                   rows={5}
                   className="w-full px-3 py-2 text-sm bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:border-[#e4ba8b] transition-colors resize-none text-white placeholder-white/50"
-                  placeholder="Your message..."
+                  placeholder={t("رسالتك...", "Your message...")}
                 />
               </div>
               <Button
@@ -294,7 +302,7 @@ export default function ContactPage() {
                 size="md"
                 className="w-full"
               >
-                {submitted ? "Message Sent!" : "Send Message"}
+                {submitted ? t("تم إرسال الرسالة!", "Message Sent!") : t("إرسال الرسالة", "Send Message")}
               </Button>
             </motion.form>
           </div>
