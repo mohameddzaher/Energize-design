@@ -37,7 +37,7 @@ export default function MapSection({ background = 'dark' }: { background?: 'whit
         </motion.div>
 
         <motion.a
-          href="https://maps.app.goo.gl/sqDpD9jAws1s9Scs6"
+          href="https://maps.app.goo.gl/cwkhF2BvWVbLHDVM8"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function MapSection({ background = 'dark' }: { background?: 'whit
           className="w-full h-64 rounded-xl overflow-hidden shadow-lg block relative cursor-pointer group"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.5!2d39.1825!3d21.4858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDI5JzA5LjAiTiAzOcKwMTAnNTcuMCJF!5e0!3m2!1sen!2sus!4v1234567890"
+            src="https://maps.google.com/maps?q=21.5772316,39.1669975&z=17&output=embed"
             width="100%"
             height="100%"
             title={t('خريطة موقع Energize Design', 'Energize Design Location Map')}
@@ -60,7 +60,7 @@ export default function MapSection({ background = 'dark' }: { background?: 'whit
         </motion.a>
         <div className="text-center mt-4">
           <a
-            href="https://maps.app.goo.gl/sqDpD9jAws1s9Scs6"
+            href="https://maps.app.goo.gl/cwkhF2BvWVbLHDVM8"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-[#e4ba8b] hover:text-[#283b4a] transition-colors inline-flex items-center"
